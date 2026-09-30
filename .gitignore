@@ -1,8 +1,111 @@
+# ==========================================================
+# AHADEX Tools (gost-tools) — Git Ignore
+# Enterprise configuration
+# ==========================================================
+
+# ---------- Dependencies ----------
 node_modules/
-build/
+.pnp
+.pnp.js
+.yarn/
+.pnpm-store/
+jspm_packages/
+
+# ---------- Build output ----------
 dist/
-coverage/
-.DS_Store
-*.log
-.env*
+dist-ssr/
+build/
+out/
+*.local
+
+# ---------- Environment files ----------
+.env
+.env.local
+.env.*.local
+.env.production
+.env.production.local
+.env.development.local
+.env.test.local
+.env.staging
+.env.staging.local
 !.env.example
+
+# ---------- Editor / IDE ----------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+*~
+
+# ---------- OS files ----------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ---------- Logs ----------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ---------- Cache ----------
+.cache/
+.vite/
+.temp/
+.tmp/
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+.node_repl_history
+.parcel-cache/
+.swc/
+
+# ---------- Test / Coverage ----------
+coverage/
+.nyc_output/
+*.lcov
+.cypress/
+playwright-report/
+test-results/
+blob-report/
+
+# ---------- Cloudflare ----------
+.wrangler/
+.dev.vars
+.cloudflare/
+
+# ---------- Vercel / Netlify (not used) ----------
+.vercel
+.netlify
+
+# ---------- Secrets ----------
+*.pem
+*.key
+*.crt
+*.p12
+secrets.json
+credentials.json
+service-account.json
+.env.vault
+
+# ---------- Misc ----------
+*.tgz
+*.zip
+*.tar.gz
+.DS_Store
+*.bak
+*.orig

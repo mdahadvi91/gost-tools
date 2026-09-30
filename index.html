@@ -1,18 +1,151 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahadex Tools - Fast & Free Online Web Utilities</title>
-    <meta name="description" content="Comprehensive suite of fast, client-side web utility tools for images, PDFs, QR codes, text, developer helpers, and calculators." />
-    <meta property="og:title" content="Ahadex Tools - Fast & Free Online Web Utilities" />
-    <meta property="og:description" content="Comprehensive suite of fast, client-side web utility tools for images, PDFs, QR codes, text, developer helpers, and calculators." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0A0B1E" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Primary Meta Tags -->
+    <title>AHADEX Tools — 42 Free, Fast & Private Online Tools</title>
+    <meta
+      name="description"
+      content="AHADEX Tools offers 42 free online tools for image, PDF, QR, text, developer and calculator tasks. All processing runs in your browser — fast, private and free forever."
+    />
+    <meta name="author" content="AHADEX" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://ahadex.fun/" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AHADEX Tools" />
+    <meta property="og:title" content="AHADEX Tools — 42 Free, Fast & Private Online Tools" />
+    <meta
+      property="og:description"
+      content="42 free online tools for image, PDF, QR, text, developer and calculator tasks. All in your browser. No uploads. No sign-up."
+    />
+    <meta property="og:url" content="https://ahadex.fun/" />
+    <meta property="og:image" content="https://ahadex.fun/images/og/default-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AHADEX Tools — 42 free online tools" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="bn_BD" />
+    <meta property="og:locale:alternate" content="ar_AR" />
+
+    <!-- Twitter/X -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AHADEX Tools — 42 Free, Fast & Private Online Tools" />
+    <meta
+      name="twitter:description"
+      content="42 free online tools for image, PDF, QR, text, developer and calculator tasks. All in your browser."
+    />
+    <meta name="twitter:image" content="https://ahadex.fun/images/og/default-og.jpg" />
+
+    <!-- Favicons (PNG-based — universal support) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+    <!-- No-flash theme script (runs before paint) -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("ahadex-theme");
+          var theme = stored || "system";
+          var isDark =
+            theme === "dark" ||
+            (theme === "system" &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", isDark);
+          document.documentElement.classList.toggle("light", !isDark);
+          document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+        } catch (e) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+
+    <!-- Language detection script -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("ahadex-language");
+          var browserLang = (navigator.language || "en").slice(0, 2);
+          var lang = stored || (["en", "bn", "ar"].includes(browserLang) ? browserLang : "en");
+          document.documentElement.setAttribute("lang", lang);
+          document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+        } catch (e) {
+          document.documentElement.setAttribute("lang", "en");
+          document.documentElement.setAttribute("dir", "ltr");
+        }
+      })();
+    </script>
+
+    <!-- Structured Data: Organization + WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://ahadex.fun/#organization",
+            "name": "AHADEX Tools",
+            "alternateName": "AHADEX",
+            "url": "https://ahadex.fun/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://ahadex.fun/images/logo/logo-icon-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "email": "mdahadvi91@gmail.com",
+            "sameAs": ["https://github.com/mdahadvi91/gost-tools"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ahadex.fun/#website",
+            "url": "https://ahadex.fun/",
+            "name": "AHADEX Tools",
+            "description": "42 free, fast and private online tools for everyday digital tasks.",
+            "publisher": { "@id": "https://ahadex.fun/#organization" },
+            "inLanguage": ["en", "bn", "ar"],
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://ahadex.fun/tools?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
+    <noscript>
+      <div style="padding: 2rem; font-family: system-ui; text-align: center; max-width: 600px; margin: 0 auto;">
+        <h1>AHADEX Tools</h1>
+        <p>Please enable JavaScript to use AHADEX Tools.</p>
+        <p>Contact: <a href="mailto:mdahadvi91@gmail.com">mdahadvi91@gmail.com</a></p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

@@ -1,32 +1,38 @@
 {
-  "name": "ahadex-tools",
+  "name": "gost-tools",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "AHADEX Tools — Fast, free, privacy-first online tools for everyday digital tasks.",
+  "description": "AHADEX Tools — 42 free, fast, privacy-first online tools for everyday digital tasks. Runs entirely in your browser.",
   "author": "AHADEX <mdahadvi91@gmail.com>",
   "license": "MIT",
   "homepage": "https://ahadex.fun",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ahadex/ahadex-tools.git"
+    "url": "git+https://github.com/mdahadvi91/gost-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/ahadex/ahadex-tools/issues",
+    "url": "https://github.com/mdahadvi91/gost-tools/issues",
     "email": "mdahadvi91@gmail.com"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://ahadex.fun/contact"
   },
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
   },
+  "packageManager": "npm@9.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:analyze": "tsc -b && vite build --mode analyze",
-    "preview": "vite preview",
+    "preview": "vite preview --port 4173",
     "lint": "tsc --noEmit",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist node_modules/.vite",
+    "clean": "rm -rf dist node_modules/.vite .vite",
+    "clean:all": "rm -rf dist node_modules node_modules/.vite .vite",
     "sitemap": "tsx scripts/generate-sitemap.ts",
     "validate": "tsx scripts/validate-tools.ts"
   },
