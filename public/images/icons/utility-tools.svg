@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="50" r="40" fill="#3b82f6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="64" height="64">
+  <defs>
+    <linearGradient id="utilGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF5F8F"/>
+      <stop offset="50%" stop-color="#FFB84D"/>
+      <stop offset="100%" stop-color="#3DFFC0"/>
+    </linearGradient>
+  </defs>
+  <path d="M47.5 16.5 C49.5 18.5 50.5 21.2 50.2 24 L42 32.2 L31.8 22 L40 13.8 C42.8 13.5 45.5 14.5 47.5 16.5 Z" fill="#141530" stroke="url(#utilGrad)" stroke-width="2.5"/>
+  <path d="M22 31.8 L32.2 42 L20 54.2 C18 56.2 14.8 56.2 12.8 54.2 C10.8 52.2 10.8 49 12.8 47 L22 31.8 Z" fill="url(#utilGrad)"/>
+  <circle cx="16" cy="51" r="2.5" fill="#0A0B1E"/>
+  <polygon points="52,36 54,42 60,44 54,46 52,52 50,46 44,44 50,42" fill="#3DFFC0"/>
+</svg>

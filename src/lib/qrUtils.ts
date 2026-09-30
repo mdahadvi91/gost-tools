@@ -1,4 +1,4 @@
 
-export function generateQrSvg(text: string): string {
+export function generateQrSvg(_text: string): string {
   return "<svg></svg>";
 }

@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from "react";
 import { CATEGORIES } from "./data/categories";
 import { TOOLS } from "./data/tools";
 

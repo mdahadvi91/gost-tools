@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="50" r="40" fill="#3b82f6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none" width="500" height="400">
+  <defs>
+    <linearGradient id="procGrad" x1="0" y1="0" x2="500" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4DD9FF"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#3DFFC0"/>
+    </linearGradient>
+  </defs>
+  <!-- Orbit rings -->
+  <circle cx="250" cy="200" r="100" stroke="#4DD9FF" stroke-width="2" stroke-opacity="0.3" fill="none"/>
+  <circle cx="250" cy="200" r="70" stroke="#8B5CF6" stroke-width="3" stroke-dasharray="12 12" fill="none"/>
+  <!-- Central Pulse Node -->
+  <circle cx="250" cy="200" r="36" fill="url(#procGrad)"/>
+  <polygon points="244,188 260,200 244,212" fill="#FFFFFF"/>
+  <!-- Satellites -->
+  <circle cx="250" cy="100" r="10" fill="#3DFFC0"/>
+  <circle cx="340" cy="240" r="8" fill="#4DD9FF"/>
+  <circle cx="170" cy="250" r="12" fill="#C084FC"/>
+  <text x="250" y="340" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="600" fill="#4DD9FF" text-anchor="middle">PROCESSING IN BROWSER...</text>
+</svg>

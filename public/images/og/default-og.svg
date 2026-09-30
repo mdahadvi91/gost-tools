@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none" width="1200" height="630">
+  <defs>
+    <linearGradient id="ogBg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A0B1E"/>
+      <stop offset="100%" stop-color="#141530"/>
+    </linearGradient>
+    <linearGradient id="ogAccent" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4DD9FF"/>
+      <stop offset="35%" stop-color="#5B9BFF"/>
+      <stop offset="70%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <radialGradient id="ogGlow1" cx="0.15" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#4DD9FF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#4DD9FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ogGlow2" cx="0.9" cy="0.85" r="0.7">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ogTextShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+
+  <!-- Glow blobs -->
+  <rect width="1200" height="630" fill="url(#ogGlow1)"/>
+  <rect width="1200" height="630" fill="url(#ogGlow2)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.06">
+    <path d="M0 100 H1200 M0 200 H1200 M0 300 H1200 M0 400 H1200 M0 500 H1200" stroke="#4DD9FF" stroke-width="1"/>
+    <path d="M100 0 V630 M200 0 V630 M300 0 V630 M400 0 V630 M500 0 V630 M600 0 V630 M700 0 V630 M800 0 V630 M900 0 V630 M1000 0 V630 M1100 0 V630" stroke="#4DD9FF" stroke-width="1"/>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#ogAccent)"/>
+
+  <!-- Logo icon area (simplified stylized A with bolt) -->
+  <g transform="translate(120,180)">
+    <g transform="translate(75,75)">
+      <!-- Left leg -->
+      <path d="M-40 55 L-12 -55 L6 -55 L18 -12 L-6 -12 L-22 42 Z" fill="url(#ogAccent)"/>
+      <!-- Right leg -->
+      <path d="M40 55 L12 -55 L-6 -55 L-18 -12 L6 -12 L22 42 Z" fill="url(#ogAccent)" opacity="0.85"/>
+      <!-- Lightning crossbar -->
+      <path d="M-24 5 L24 5 L12 25 L-12 25 Z" fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    <!-- Glow around logo -->
+    <circle cx="75" cy="75" r="100" fill="url(#ogAccent)" opacity="0.12"/>
+  </g>
+
+  <!-- Main title -->
+  <text
+    x="330"
+    y="290"
+    font-family="'Clash Display','Inter',system-ui,sans-serif"
+    font-size="88"
+    font-weight="700"
+    fill="#F8F6F1"
+    letter-spacing="-2.5">
+    AHADEX
+  </text>
+
+  <text
+    x="720"
+    y="290"
+    font-family="'Inter',system-ui,sans-serif"
+    font-size="88"
+    font-weight="300"
+    fill="#A0A2C0"
+    letter-spacing="-1.5"
+    opacity="0.7">
+    Tools
+  </text>
+
+  <!-- Tagline -->
+  <text
+    x="332"
+    y="360"
+    font-family="'Inter',system-ui,sans-serif"
+    font-size="30"
+    font-weight="400"
+    fill="#A0A2C0"
+    letter-spacing="-0.4">
+    42 Free &amp; Private Online Tools
+  </text>
+
+  <!-- Feature pills -->
+  <g transform="translate(120,450)">
+    <!-- Pill 1 -->
+    <g>
+      <rect x="0" y="0" width="230" height="56" rx="28" fill="#FFFFFF" opacity="0.05" stroke="#4DD9FF" stroke-width="1.5"/>
+      <circle cx="30" cy="28" r="6" fill="#4DD9FF"/>
+      <text x="50" y="37" font-family="'Inter',system-ui,sans-serif" font-size="20" font-weight="500" fill="#F8F6F1">
+        Fast &amp; Simple
+      </text>
+    </g>
+    <!-- Pill 2 -->
+    <g transform="translate(255,0)">
+      <rect x="0" y="0" width="220" height="56" rx="28" fill="#FFFFFF" opacity="0.05" stroke="#8B5CF6" stroke-width="1.5"/>
+      <circle cx="30" cy="28" r="6" fill="#8B5CF6"/>
+      <text x="50" y="37" font-family="'Inter',system-ui,sans-serif" font-size="20" font-weight="500" fill="#F8F6F1">
+        100% Private
+      </text>
+    </g>
+    <!-- Pill 3 -->
+    <g transform="translate(490,0)">
+      <rect x="0" y="0" width="195" height="56" rx="28" fill="#FFFFFF" opacity="0.05" stroke="#C084FC" stroke-width="1.5"/>
+      <circle cx="30" cy="28" r="6" fill="#C084FC"/>
+      <text x="50" y="37" font-family="'Inter',system-ui,sans-serif" font-size="20" font-weight="500" fill="#F8F6F1">
+        Free Forever
+      </text>
+    </g>
+  </g>
+
+  <!-- Domain URL -->
+  <text
+    x="120"
+    y="575"
+    font-family="'JetBrains Mono','Inter',monospace"
+    font-size="22"
+    font-weight="500"
+    fill="#4DD9FF"
+    letter-spacing="0.5"
+    opacity="0.85">
+    ahadex.fun
+  </text>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#ogAccent)"/>
+</svg>

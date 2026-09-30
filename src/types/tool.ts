@@ -1,11 +1,44 @@
+import type { CategoryId } from "./category";
+
+export interface ToolFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface ToolHowToStep {
+  step: number;
+  title: string;
+  description: string;
+}
+
+export interface ToolFeature {
+  title: string;
+  description: string;
+}
+
+export interface ToolSEO {
+  title: string;
+  description: string;
+  ogImage: string;
+}
 
 export interface Tool {
   id: string;
-  name: string;
   slug: string;
-  category: string;
+  name: string;
   description: string;
+  longDescription: string;
+  category: CategoryId;
+  keywords: string[];
+  path: string;
   icon?: string;
-  badge?: string;
-  isPopular?: boolean;
+  popular?: boolean;
+  newTool?: boolean;
+  features: ToolFeature[];
+  howTo: ToolHowToStep[];
+  faq: ToolFAQ[];
+  relatedTools: string[];
+  seo: ToolSEO;
 }
+
+export type ToolMap = Record<string, Tool>;

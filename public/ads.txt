@@ -1,1 +1,8 @@
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+# ==========================================================
+# AHADEX Tools — ads.txt
+# https://ahadex.fun/ads.txt
+# Replace pub-0000000000000000 with your real AdSense publisher ID upon approval
+# ==========================================================
+
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+

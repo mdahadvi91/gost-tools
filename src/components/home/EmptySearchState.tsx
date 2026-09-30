@@ -1,10 +1,42 @@
-import React from "react";
+import { SearchX } from "lucide-react";
+import { Button } from "@components/common/Button";
 
-export const EmptySearchState: React.FC<any> = ({ children, ...props }) => {
+interface EmptySearchStateProps {
+  query?: string;
+  onClear?: () => void;
+}
+
+export function EmptySearchState({
+  query,
+  onClear,
+}: EmptySearchStateProps) {
   return (
-    <div data-component="EmptySearchState" {...props}>
-      {children || "EmptySearchState"}
+    <div
+      role="status"
+      className="flex flex-col items-center justify-center text-center py-16 px-4"
+    >
+      <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+        <SearchX
+          className="w-10 h-10 text-dark-textSecondary"
+          aria-hidden="true"
+        />
+      </div>
+
+      <h3 className="font-display text-xl font-semibold text-white mb-2">
+        No tools found
+      </h3>
+
+      <p className="text-sm text-dark-textSecondary max-w-sm mb-6">
+        {query
+          ? `No results for "${query}". Try a different keyword or browse all tools.`
+          : "No tools match your filter. Try a different category."}
+      </p>
+
+      {onClear && (
+        <Button variant="secondary" onClick={onClear}>
+          Clear filters
+        </Button>
+      )}
     </div>
   );
-};
-export default EmptySearchState;
+}

@@ -1,1 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="50" r="40" fill="#3b82f6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" width="512" height="512">
+  <defs>
+    <linearGradient id="animGrad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4DD9FF"/>
+      <stop offset="35%" stop-color="#5B9BFF"/>
+      <stop offset="70%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <style>
+      @keyframes pulseA {
+        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(77,217,255,0.4)); }
+        50% { transform: scale(1.04); filter: drop-shadow(0 0 24px rgba(139,92,246,0.8)); }
+      }
+      @keyframes boltFlash {
+        0%, 100% { fill: #FFFFFF; }
+        50% { fill: #4DD9FF; }
+      }
+      .logo-group { transform-origin: 256px 256px; animation: pulseA 3s ease-in-out infinite; }
+      .bolt { animation: boltFlash 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="512" height="512" rx="128" fill="#0A0B1E"/>
+  <rect x="6" y="6" width="500" height="500" rx="124" stroke="url(#animGrad)" stroke-width="4" stroke-opacity="0.6" fill="none"/>
+
+  <g class="logo-group" transform="translate(256, 256) scale(2.2)">
+    <path d="M-45 55 L-15 -60 L6 -60 L18 -15 L-8 -15 L-25 45 Z" fill="url(#animGrad)"/>
+    <path d="M45 55 L15 -60 L-6 -60 L-18 -15 L8 -15 L25 45 Z" fill="url(#animGrad)" opacity="0.88"/>
+    <polygon class="bolt" points="-28,6 28,6 10,32 -10,32" fill="#FFFFFF"/>
+  </g>
+</svg>

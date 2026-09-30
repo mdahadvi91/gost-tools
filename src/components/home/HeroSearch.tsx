@@ -1,10 +1,12 @@
-import React from "react";
+import { SearchBar } from "@components/common/SearchBar";
 
-export const HeroSearch: React.FC<any> = ({ children, ...props }) => {
+export function HeroSearch() {
   return (
-    <div data-component="HeroSearch" {...props}>
-      {children || "HeroSearch"}
+    <div className="w-full">
+      <SearchBar
+        size="lg"
+        placeholder="What do you need? Try 'JPG to PNG' or 'PDF merge'..."
+      />
     </div>
   );
-};
-export default HeroSearch;
+}

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none" width="1200" height="630">
+  <defs>
+    <linearGradient id="aboutBg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A0B1E"/>
+      <stop offset="100%" stop-color="#1A1030"/>
+    </linearGradient>
+    <linearGradient id="aboutAccent" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C084FC"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#4DD9FF"/>
+    </linearGradient>
+    <radialGradient id="aboutGlow1" cx="0.85" cy="0.15" r="0.6">
+      <stop offset="0%" stop-color="#C084FC" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#C084FC" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aboutGlow2" cx="0.1" cy="0.9" r="0.6">
+      <stop offset="0%" stop-color="#4DD9FF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#4DD9FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#aboutBg)"/>
+  <rect width="1200" height="630" fill="url(#aboutGlow1)"/>
+  <rect width="1200" height="630" fill="url(#aboutGlow2)"/>
+
+  <!-- Top accent -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#aboutAccent)"/>
+
+  <!-- Big quote mark decoration -->
+  <text
+    x="80"
+    y="220"
+    font-family="'Clash Display',serif"
+    font-size="240"
+    font-weight="700"
+    fill="url(#aboutAccent)"
+    opacity="0.15">
+    "
+  </text>
+
+  <!-- Small logo top-left -->
+  <g transform="translate(120,80)">
+    <g transform="translate(40,40)">
+      <path d="M-26 35 L-8 -35 L4 -35 L12 -8 L-4 -8 L-14 27 Z" fill="url(#aboutAccent)"/>
+      <path d="M26 35 L8 -35 L-4 -35 L-12 -8 L4 -8 L14 27 Z" fill="url(#aboutAccent)" opacity="0.85"/>
+      <path d="M-16 4 L16 4 L8 16 L-8 16 Z" fill="#FFFFFF" opacity="0.95"/>
+    </g>
+    <text x="90" y="34" font-family="'Clash Display','Inter',system-ui,sans-serif" font-size="26" font-weight="700" fill="#F8F6F1" letter-spacing="-0.5">
+      AHADEX Tools
+    </text>
+  </g>
+
+  <!-- Main heading -->
+  <text
+    x="120"
+    y="380"
+    font-family="'Clash Display','Inter',system-ui,sans-serif"
+    font-size="72"
+    font-weight="700"
+    fill="#F8F6F1"
+    letter-spacing="-2">
+    One developer.
+  </text>
+
+  <text
+    x="120"
+    y="460"
+    font-family="'Clash Display','Inter',system-ui,sans-serif"
+    font-size="72"
+    font-weight="700"
+    fill="url(#aboutAccent)"
+    letter-spacing="-2">
+    One big dream.
+  </text>
+
+  <!-- Subtitle -->
+  <text
+    x="120"
+    y="530"
+    font-family="'Inter',system-ui,sans-serif"
+    font-size="26"
+    font-weight="400"
+    fill="#A0A2C0"
+    letter-spacing="-0.3">
+    The story behind AHADEX Tools.
+  </text>
+
+  <!-- Bottom accent -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#aboutAccent)"/>
+</svg>

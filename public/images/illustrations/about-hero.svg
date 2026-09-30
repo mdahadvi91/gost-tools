@@ -1,1 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="50" r="40" fill="#3b82f6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" fill="none" width="700" height="500">
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="700" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4DD9FF"/>
+      <stop offset="35%" stop-color="#5B9BFF"/>
+      <stop offset="70%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <radialGradient id="heroBackGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0A0B1E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="350" cy="250" r="220" fill="url(#heroBackGlow)"/>
+
+  <!-- Futuristic Monolith / Code Canvas -->
+  <g transform="translate(150, 80)">
+    <rect width="400" height="280" rx="24" fill="#141530" stroke="url(#heroGrad)" stroke-width="2.5"/>
+    <!-- Window Bar -->
+    <rect width="400" height="40" rx="24" fill="#0A0B1E"/>
+    <circle cx="24" cy="20" r="5" fill="#FF5F8F"/>
+    <circle cx="42" cy="20" r="5" fill="#FFB84D"/>
+    <circle cx="60" cy="20" r="5" fill="#3DFFC0"/>
+    <text x="200" y="25" font-family="'JetBrains Mono',monospace" font-size="12" fill="#A0A2C0" text-anchor="middle">ahadex.fun :: architecture</text>
+
+    <!-- Code Line Graphics -->
+    <rect x="30" y="70" width="180" height="8" rx="4" fill="#4DD9FF" opacity="0.8"/>
+    <rect x="30" y="95" width="260" height="8" rx="4" fill="#8B5CF6" opacity="0.6"/>
+    <rect x="30" y="120" width="140" height="8" rx="4" fill="#5B9BFF" opacity="0.7"/>
+    <rect x="30" y="145" width="220" height="8" rx="4" fill="#3DFFC0" opacity="0.75"/>
+    <rect x="30" y="170" width="160" height="8" rx="4" fill="#C084FC" opacity="0.65"/>
+    <rect x="30" y="195" width="290" height="8" rx="4" fill="#FFB84D" opacity="0.7"/>
+  </g>
+
+  <!-- Glowing Brand Core in foreground -->
+  <g transform="translate(350, 380)">
+    <rect x="-140" y="-30" width="280" height="60" rx="30" fill="#0A0B1E" stroke="url(#heroGrad)" stroke-width="2"/>
+    <circle cx="-100" cy="0" r="8" fill="#4DD9FF"/>
+    <text x="10" y="6" font-family="'Clash Display','Inter',sans-serif" font-size="18" font-weight="700" fill="#F8F6F1" text-anchor="middle">100% Privacy Focused</text>
+  </g>
+</svg>

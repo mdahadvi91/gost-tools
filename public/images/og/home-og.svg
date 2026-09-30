@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none" width="1200" height="630">
+  <defs>
+    <linearGradient id="homeBg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A0B1E"/>
+      <stop offset="50%" stop-color="#0E1024"/>
+      <stop offset="100%" stop-color="#141530"/>
+    </linearGradient>
+    <linearGradient id="homeAccent" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4DD9FF"/>
+      <stop offset="35%" stop-color="#5B9BFF"/>
+      <stop offset="70%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <radialGradient id="homeGlow" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0%" stop-color="#5B9BFF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#5B9BFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#homeBg)"/>
+  <rect width="1200" height="630" fill="url(#homeGlow)"/>
+
+  <!-- Floating tool icons pattern (top left) -->
+  <g opacity="0.15">
+    <rect x="80" y="80" width="60" height="60" rx="12" stroke="#4DD9FF" stroke-width="2" fill="none"/>
+    <circle cx="110" cy="110" r="10" fill="#4DD9FF"/>
+
+    <rect x="180" y="80" width="60" height="60" rx="12" stroke="#8B5CF6" stroke-width="2" fill="none"/>
+    <path d="M195 105 L210 120 L225 95" stroke="#8B5CF6" stroke-width="2" fill="none"/>
+
+    <rect x="80" y="180" width="60" height="60" rx="12" stroke="#C084FC" stroke-width="2" fill="none"/>
+    <path d="M95 200 H125 M95 210 H115" stroke="#C084FC" stroke-width="2"/>
+
+    <rect x="180" y="180" width="60" height="60" rx="12" stroke="#5B9BFF" stroke-width="2" fill="none"/>
+    <circle cx="210" cy="210" r="12" stroke="#5B9BFF" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Top accent -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#homeAccent)"/>
+
+  <!-- Main centered logo + title -->
+  <g transform="translate(600,240)">
+    <!-- Icon -->
+    <g transform="translate(0,-60)">
+      <g transform="translate(0,0)">
+        <!-- Stylized A -->
+        <path d="M-50 65 L-15 -65 L8 -65 L22 -14 L-8 -14 L-28 50 Z" fill="url(#homeAccent)"/>
+        <path d="M50 65 L15 -65 L-8 -65 L-22 -14 L8 -14 L28 50 Z" fill="url(#homeAccent)" opacity="0.85"/>
+        <path d="M-30 6 L30 6 L15 30 L-15 30 Z" fill="#FFFFFF" opacity="0.95"/>
+      </g>
+      <!-- Glow -->
+      <circle cx="0" cy="0" r="90" fill="url(#homeAccent)" opacity="0.15"/>
+    </g>
+
+    <!-- Title -->
+    <text
+      y="85"
+      text-anchor="middle"
+      font-family="'Clash Display','Inter',system-ui,sans-serif"
+      font-size="96"
+      font-weight="700"
+      fill="#F8F6F1"
+      letter-spacing="-3">
+      AHADEX Tools
+    </text>
+
+    <!-- Subtitle -->
+    <text
+      y="140"
+      text-anchor="middle"
+      font-family="'Inter',system-ui,sans-serif"
+      font-size="28"
+      font-weight="400"
+      fill="#A0A2C0"
+      letter-spacing="-0.3">
+      42 free tools. All private. All fast.
+    </text>
+  </g>
+
+  <!-- Bottom URL badge -->
+  <g transform="translate(600,545)">
+    <rect x="-140" y="-22" width="280" height="44" rx="22" fill="#FFFFFF" opacity="0.06" stroke="#4DD9FF" stroke-width="1.5"/>
+    <circle cx="-108" cy="0" r="4" fill="#4DD9FF"/>
+    <text x="0" y="7" text-anchor="middle" font-family="'JetBrains Mono','Inter',monospace" font-size="20" font-weight="500" fill="#4DD9FF" letter-spacing="1">
+      ahadex.fun
+    </text>
+  </g>
+
+  <!-- Bottom accent -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#homeAccent)"/>
+</svg>
