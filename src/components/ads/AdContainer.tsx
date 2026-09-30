@@ -1,10 +1,43 @@
-import React from "react";
+import { type ReactNode } from "react";
+import { cn } from "@lib/cn";
 
-export const AdContainer: React.FC<any> = ({ children, ...props }) => {
-  return (
-    <div data-component="AdContainer" {...props}>
-      {children || "AdContainer"}
-    </div>
-  );
+interface AdContainerProps {
+  children: ReactNode;
+  label?: string;
+  spacing?: "sm" | "md" | "lg";
+  className?: string;
+}
+
+const spacingMap = {
+  sm: "my-4",
+  md: "my-8",
+  lg: "my-12",
 };
-export default AdContainer;
+
+export function AdContainer({
+  children,
+  label = "Advertisement",
+  spacing = "md",
+  className,
+}: AdContainerProps) {
+  if (!children) return null;
+
+  return (
+    <aside
+      aria-label={label}
+      className={cn(
+        "w-full flex flex-col items-center",
+        spacingMap[spacing],
+        className
+      )}
+    >
+      <span
+        aria-hidden="true"
+        className="text-[10px] uppercase tracking-widest text-dark-textSecondary/50 font-medium mb-2"
+      >
+        {label}
+      </span>
+      <div className="w-full max-w-3xl">{children}</div>
+    </aside>
+  );
+}

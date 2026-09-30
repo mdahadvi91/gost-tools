@@ -1,16 +1,62 @@
-
 export const storage = {
-  get: <T>(key: string, def: T): T => {
+  get<T>(key: string, fallback: T): T {
+    if (typeof window === "undefined") return fallback;
     try {
-      const v = localStorage.getItem(key);
-      return v ? JSON.parse(v) : def;
+      const raw = localStorage.getItem(key);
+      if (raw === null) return fallback;
+      return JSON.parse(raw) as T;
     } catch {
-      return def;
+      return fallback;
     }
   },
-  set: <T>(key: string, value: T) => {
+
+  set<T>(key: string, value: T): void {
+    if (typeof window === "undefined") return;
     try {
       localStorage.setItem(key, JSON.stringify(value));
-    } catch {}
-  }
+    } catch {
+      // quota exceeded — ignore
+    }
+  },
+
+  getString(key: string, fallback = ""): string {
+    if (typeof window === "undefined") return fallback;
+    try {
+      return localStorage.getItem(key) ?? fallback;
+    } catch {
+      return fallback;
+    }
+  },
+
+  setString(key: string, value: string): void {
+    if (typeof window === "undefined") return;
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // ignore
+    }
+  },
+
+  remove(key: string): void {
+    if (typeof window === "undefined") return;
+    try {
+      localStorage.removeItem(key);
+    } catch {
+      // ignore
+    }
+  },
+
+  clear(prefix = "ahadex-"): void {
+    if (typeof window === "undefined") return;
+    try {
+      const keys: string[] = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith(prefix)) keys.push(k);
+      }
+      keys.forEach((k) => localStorage.removeItem(k));
+    } catch {
+      // ignore
+    }
+  },
 };

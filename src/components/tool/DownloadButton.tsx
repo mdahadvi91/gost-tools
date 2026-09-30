@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Download, Check } from "lucide-react";
 import { cn } from "@lib/cn";
-import { useSound } from "@components/decorative/SoundController";
+import { useSound } from "@contexts/SoundContext";
 
 interface DownloadButtonProps {
   onDownload: () => void | Promise<void>;

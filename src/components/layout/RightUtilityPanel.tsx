@@ -1,8 +1,17 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sun, Moon, Monitor, Volume2, VolumeX, Github, Mail } from "lucide-react";
+import {
+  X,
+  Sun,
+  Moon,
+  Monitor,
+  Volume2,
+  VolumeX,
+  Github,
+  Mail,
+} from "lucide-react";
 import { cn } from "@lib/cn";
-import { useSound } from "@components/decorative/SoundController";
+import { useSound } from "@contexts/SoundContext";
 
 interface RightUtilityPanelProps {
   open: boolean;
@@ -27,7 +36,7 @@ const LANGUAGES = [
 ];
 
 export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
-  const { enabled: soundEnabled, toggle: toggleSound } = useSound();
+  const { soundEnabled, toggleSound } = useSound();
 
   useEffect(() => {
     if (!open) return;
@@ -188,7 +197,10 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
                   aria-pressed={soundEnabled}
                 >
                   {soundEnabled ? (
-                    <Volume2 className="w-5 h-5 text-aha-cyan" aria-hidden="true" />
+                    <Volume2
+                      className="w-5 h-5 text-aha-cyan"
+                      aria-hidden="true"
+                    />
                   ) : (
                     <VolumeX className="w-5 h-5" aria-hidden="true" />
                   )}

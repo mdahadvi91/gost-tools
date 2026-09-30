@@ -3,7 +3,7 @@ import { useDropzone } from "react-dropzone";
 import { motion, AnimatePresence } from "framer-motion";
 import { UploadCloud, FileWarning } from "lucide-react";
 import { cn } from "@lib/cn";
-import { useSound } from "@components/decorative/SoundController";
+import { useSound } from "@contexts/SoundContext";
 
 interface UploadZoneProps {
   onFiles: (files: File[]) => void;
@@ -25,7 +25,7 @@ function formatBytes(bytes: number): string {
 export function UploadZone({
   onFiles,
   accept,
-  maxSize = 20 * 1024 * 1024, // 20 MB
+  maxSize = 20 * 1024 * 1024,
   multiple = false,
   hint,
   className,

@@ -1,14 +1,54 @@
+import type { NavItem, NavSection } from "@types/common";
 
-export const NAVIGATION = {
-  header: [
-    { title: "Home", href: "/" },
-    { title: "All Tools", href: "/tools" },
-    { title: "About", href: "/about" },
-    { title: "Contact", href: "/contact" },
-  ],
-  footer: [
-    { title: "Privacy Policy", href: "/privacy" },
-    { title: "Terms of Service", href: "/terms" },
-    { title: "Disclaimer", href: "/disclaimer" },
-  ]
-};
+export const primaryNav: NavItem[] = [
+  { label: "Home", to: "/" },
+  { label: "All Tools", to: "/tools" },
+  { label: "About", to: "/about" },
+  { label: "Contact", to: "/contact" },
+];
+
+export const categoryNav: NavItem[] = [
+  { label: "Image Tools", to: "/categories/image" },
+  { label: "PDF Tools", to: "/categories/pdf" },
+  { label: "QR & Barcode", to: "/categories/qr" },
+  { label: "Text Tools", to: "/categories/text" },
+  { label: "Developer Tools", to: "/categories/developer" },
+  { label: "Calculators", to: "/categories/calculators" },
+];
+
+export const footerNav: NavSection[] = [
+  {
+    title: "Tools",
+    items: [
+      { label: "All Tools", to: "/tools" },
+      { label: "Image Tools", to: "/categories/image" },
+      { label: "PDF Tools", to: "/categories/pdf" },
+      { label: "QR & Barcode", to: "/categories/qr" },
+      { label: "Text Tools", to: "/categories/text" },
+      { label: "Developer Tools", to: "/categories/developer" },
+      { label: "Calculators", to: "/categories/calculators" },
+    ],
+  },
+  {
+    title: "Company",
+    items: [
+      { label: "About", to: "/about" },
+      { label: "Contact", to: "/contact" },
+      {
+        label: "GitHub",
+        to: "https://github.com/mdahadvi91/gost-tools",
+        external: true,
+      },
+    ],
+  },
+  {
+    title: "Legal",
+    items: [
+      { label: "Privacy Policy", to: "/privacy" },
+      { label: "Terms of Service", to: "/terms" },
+      { label: "Disclaimer", to: "/disclaimer" },
+      { label: "Cookie Policy", to: "/cookie-policy" },
+      { label: "Accessibility", to: "/accessibility" },
+    ],
+  },
+];

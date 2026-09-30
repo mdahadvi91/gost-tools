@@ -1,10 +1,29 @@
-import React from "react";
+import { StructuredData } from "./StructuredData";
 
-export const FAQSchema: React.FC<any> = ({ children, ...props }) => {
-  return (
-    <div data-component="FAQSchema" {...props}>
-      {children || "FAQSchema"}
-    </div>
-  );
-};
-export default FAQSchema;
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQSchemaProps {
+  faqs: FAQItem[];
+}
+
+export function FAQSchema({ faqs }: FAQSchemaProps) {
+  if (faqs.length === 0) return null;
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return <StructuredData id="ahadex-faq-schema" data={data} />;
+}

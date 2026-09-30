@@ -1,8 +1,13 @@
+// ============================================================
+// ToastContext — Re-export from Toast component
+// ------------------------------------------------------------
+// This file exists so all React contexts live under @contexts/*.
+// The actual provider + hook are implemented in:
+//   @components/common/Toast
+// ============================================================
 
-import React, { createContext, useContext } from "react";
-const ToastContext = createContext<{ toast: (msg: string) => void }>({ toast: () => {} });
-export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
-  const toast = (msg: string) => console.log(msg);
-  return <ToastContext.Provider value={{ toast }}>{children}</ToastContext.Provider>;
-};
-export const useToast = () => useContext(ToastContext);
+export {
+  ToastProvider,
+  useToast,
+  type ToastType,
+} from "@components/common/Toast";

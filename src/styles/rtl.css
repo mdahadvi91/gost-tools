@@ -1,1 +1,49 @@
-/* RTL layout support */
+
+/* ============================================================
+ * AHADEX Tools — RTL Support (Arabic)
+ * Applied automatically when html[dir="rtl"]
+ * ============================================================ */
+
+html[dir="rtl"] {
+  /* Flip icons that should mirror */
+  --rtl-mirror: -1;
+}
+
+html[dir="rtl"] .rtl-mirror {
+  transform: scaleX(-1);
+}
+
+/* Reverse horizontal spacing */
+html[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Adjust text alignment */
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+/* Chevron icons should flip in RTL */
+html[dir="rtl"] .rtl-chevron {
+  transform: scaleX(-1);
+}
+
+/* Keep code blocks LTR */
+html[dir="rtl"] pre,
+html[dir="rtl"] code,
+html[dir="rtl"] .keep-ltr {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: embed;
+}
+
+/* Sidebar drawer flips */
+html[dir="rtl"] .sidebar-left {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .sidebar-right {
+  right: auto;
+  left: 0;
+}

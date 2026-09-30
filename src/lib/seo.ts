@@ -1,6 +1,156 @@
+import { APP_CONFIG } from "@constants/config";
+import { TITLE_TEMPLATES } from "@constants/seo";
 
-export function updatePageMeta(title: string, description: string) {
-  document.title = title;
-  const metaDesc = document.querySelector("meta[name=\"description\"]");
-  if (metaDesc) metaDesc.setAttribute("content", description);
+export interface PageSEO {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage: string;
+  ogType: "website" | "article";
+  noIndex: boolean;
+  keywords?: string[];
+}
+
+/* ---------- Builders ---------- */
+
+export function buildHomeSEO(): PageSEO {
+  return {
+    title: TITLE_TEMPLATES.home,
+    description: APP_CONFIG.description,
+    canonical: `${APP_CONFIG.url}/`,
+    ogImage: "/images/og/home-og.jpg",
+    ogType: "website",
+    noIndex: false,
+  };
+}
+
+export function buildToolSEO(tool: {
+  name: string;
+  description: string;
+  path: string;
+  seo: { title: string; description: string; ogImage: string };
+  keywords?: string[];
+}): PageSEO {
+  return {
+    title: tool.seo.title,
+    description: tool.seo.description,
+    canonical: `${APP_CONFIG.url}${tool.path}`,
+    ogImage: tool.seo.ogImage,
+    ogType: "article",
+    noIndex: false,
+    keywords: tool.keywords,
+  };
+}
+
+export function buildCategorySEO(category: {
+  name: string;
+  description: string;
+  slug: string;
+}): PageSEO {
+  return {
+    title: TITLE_TEMPLATES.category(category.name),
+    description: category.description,
+    canonical: `${APP_CONFIG.url}/categories/${category.slug}`,
+    ogImage: `/images/og/categories/${category.slug}-og.jpg`,
+    ogType: "website",
+    noIndex: false,
+  };
+}
+
+export function buildTrustPageSEO(page: {
+  title: string;
+  subtitle: string;
+  slug: string;
+}): PageSEO {
+  return {
+    title: `${page.title} | ${APP_CONFIG.name}`,
+    description: page.subtitle,
+    canonical: `${APP_CONFIG.url}/${page.slug}`,
+    ogImage: "/images/og/default-og.jpg",
+    ogType: "article",
+    noIndex: false,
+  };
+}
+
+export function buildNotFoundSEO(): PageSEO {
+  return {
+    title: TITLE_TEMPLATES.notFound,
+    description: "The page you were looking for could not be found.",
+    canonical: `${APP_CONFIG.url}/404`,
+    ogImage: "/images/og/default-og.jpg",
+    ogType: "website",
+    noIndex: true,
+  };
+}
+
+/* ---------- DOM appliers ---------- */
+
+export function applySEOToDocument(seo: PageSEO): void {
+  if (typeof document === "undefined") return;
+
+  document.title = seo.title;
+
+  setMeta("name", "description", seo.description);
+  setMeta(
+    "name",
+    "robots",
+    seo.noIndex ? "noindex, nofollow" : "index, follow, max-image-preview:large"
+  );
+
+  if (seo.keywords && seo.keywords.length > 0) {
+    setMeta("name", "keywords", seo.keywords.join(", "));
+  } else {
+    removeMeta("name", "keywords");
+  }
+
+  setLink("canonical", seo.canonical);
+
+  setMeta("property", "og:title", seo.title);
+  setMeta("property", "og:description", seo.description);
+  setMeta("property", "og:url", seo.canonical);
+  setMeta("property", "og:type", seo.ogType);
+  setMeta("property", "og:image", toAbsolute(seo.ogImage));
+
+  setMeta("name", "twitter:card", "summary_large_image");
+  setMeta("name", "twitter:title", seo.title);
+  setMeta("name", "twitter:description", seo.description);
+  setMeta("name", "twitter:image", toAbsolute(seo.ogImage));
+}
+
+/* ---------- helpers ---------- */
+
+function toAbsolute(path: string): string {
+  if (path.startsWith("http")) return path;
+  return `${APP_CONFIG.url}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+function setMeta(
+  attr: "name" | "property",
+  key: string,
+  content: string
+): void {
+  let el = document.head.querySelector<HTMLMetaElement>(
+    `meta[${attr}="${key}"]`
+  );
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+}
+
+function removeMeta(attr: "name" | "property", key: string): void {
+  const el = document.head.querySelector(`meta[${attr}="${key}"]`);
+  if (el) el.remove();
+}
+
+function setLink(rel: string, href: string): void {
+  let el = document.head.querySelector<HTMLLinkElement>(`link[rel="${rel}"]`);
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", rel);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("href", href);
 }

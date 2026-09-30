@@ -1,1 +1,122 @@
-/* Keyframe animations */
+/* ============================================================
+ * AHADEX Tools — Animation Utilities
+ * Extra keyframes beyond Tailwind config
+ * ============================================================ */
+
+/* ===== Shimmer ===== */
+@keyframes shimmer-slide {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer-slide 2s linear infinite;
+}
+
+/* ===== Gradient Flow ===== */
+@keyframes gradient-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-flow {
+  background-size: 200% 200%;
+  animation: gradient-flow 8s ease infinite;
+}
+
+/* ===== Fade In Up ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ===== Fade In Down ===== */
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ===== Stagger utilities (for children) ===== */
+.stagger-children > * {
+  animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.10s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.20s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.30s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.40s; }
+
+/* ===== Hover lift ===== */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== Logo pulse (already in Tailwind, but provided as fallback) ===== */
+@keyframes logo-pulse-fallback {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(77, 217, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.7));
+  }
+}
+
+.animate-logo-pulse-fallback {
+  animation: logo-pulse-fallback 3s ease-in-out infinite;
+}
+
+/* ===== Reduced motion override ===== */
+@media (prefers-reduced-motion: reduce) {
+  .shimmer,
+  .gradient-flow,
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .stagger-children > *,
+  .animate-logo-pulse-fallback {
+    animation: none !important;
+  }
+}

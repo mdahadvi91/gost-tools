@@ -1,5 +1,1 @@
-
-export function useSound() {
-  const play = () => {};
-  return { play };
-}
+export { useSound, useAppSound } from "@contexts/SoundContext";
