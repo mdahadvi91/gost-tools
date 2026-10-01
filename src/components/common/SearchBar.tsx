@@ -131,15 +131,15 @@ export function SearchBar({
       <div
         className={cn(
           "flex items-center gap-3",
-          "bg-white/5 backdrop-blur-xl border border-white/10",
-          "focus-within:border-aha-cyan/50 focus-within:shadow-glow-cyan",
+          "bg-love-rose/5 backdrop-blur-xl border border-love-rose/15",
+          "focus-within:border-love-rose/50 focus-within:shadow-glow-rose",
           "transition-all duration-300",
           sizeClasses
         )}
       >
         <Search
           className={cn(
-            "flex-shrink-0 text-dark-textSecondary",
+            "flex-shrink-0 text-love-blush/70",
             size === "lg" ? "w-5 h-5" : "w-4 h-4"
           )}
           aria-hidden="true"
@@ -161,7 +161,7 @@ export function SearchBar({
           aria-expanded={open && results.length > 0}
           aria-autocomplete="list"
           role="combobox"
-          className="flex-1 bg-transparent text-white placeholder:text-dark-textSecondary/60 focus:outline-none"
+          className="flex-1 bg-transparent text-love-pearl placeholder:text-love-blush/40 focus:outline-none"
         />
 
         {query ? (
@@ -169,13 +169,13 @@ export function SearchBar({
             type="button"
             onClick={clear}
             aria-label="Clear search"
-            className="flex-shrink-0 p-1 rounded-md text-dark-textSecondary hover:text-white transition-colors"
+            className="flex-shrink-0 p-1 rounded-md text-love-blush/70 hover:text-love-pearl transition-colors"
           >
             <X className="w-4 h-4" aria-hidden="true" />
           </button>
         ) : (
           <kbd
-            className="hidden sm:inline-flex items-center gap-0.5 px-2 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] font-mono text-dark-textSecondary"
+            className="hidden sm:inline-flex items-center gap-0.5 px-2 py-1 rounded-md bg-love-rose/10 border border-love-rose/20 text-[10px] font-mono text-love-blush/60"
             aria-hidden="true"
           >
             <Command className="w-3 h-3" />K
@@ -194,7 +194,7 @@ export function SearchBar({
             className={cn(
               "absolute top-full left-0 right-0 mt-2 py-2 z-50",
               "bg-dark-surface/95 backdrop-blur-xl",
-              "border border-white/10 rounded-xl shadow-glass-dark",
+              "border border-love-rose/20 rounded-xl shadow-glass-dark",
               "max-h-[400px] overflow-y-auto"
             )}
           >
@@ -209,11 +209,11 @@ export function SearchBar({
                   className={cn(
                     "w-full flex flex-col items-start gap-0.5 px-4 py-2.5 text-left transition-colors",
                     index === activeIndex
-                      ? "bg-white/10"
-                      : "hover:bg-white/5"
+                      ? "bg-love-rose/15"
+                      : "hover:bg-love-rose/8"
                   )}
                 >
-                  <span className="text-sm font-medium text-white">
+                  <span className="text-sm font-medium text-love-pearl">
                     {result.name}
                   </span>
                   <span className="text-xs text-dark-textSecondary line-clamp-1">

@@ -40,9 +40,7 @@ function Counter({ to, suffix = "", duration = 1400 }: CounterProps) {
 
     const tick = (now: number) => {
       const progress = Math.min(1, (now - start) / duration);
-      // easeOutExpo
-      const eased =
-        progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       setValue(Math.round(eased * to));
       if (progress < 1) raf = requestAnimationFrame(tick);
     };
@@ -79,13 +77,14 @@ export function StatsCounter({ className }: { className?: string }) {
             }}
             className={cn(
               "p-6 rounded-2xl text-center",
-              "bg-dark-surface border border-white/10"
+              "bg-dark-surface border border-love-rose/15",
+              "hover:border-love-rose/40 transition-colors"
             )}
           >
-            <p className="font-display font-bold text-h2 bg-logo-gradient bg-clip-text text-transparent">
+            <p className="font-display font-bold text-h2 bg-love-gradient bg-clip-text text-transparent">
               <Counter to={stat.value} suffix={stat.suffix} />
             </p>
-            <p className="mt-1.5 text-xs uppercase tracking-widest text-dark-textSecondary font-medium">
+            <p className="mt-1.5 text-xs uppercase tracking-widest text-love-blush/60 font-medium">
               {stat.label}
             </p>
           </motion.div>

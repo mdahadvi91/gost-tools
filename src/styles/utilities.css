@@ -1,5 +1,5 @@
 /* ============================================================
- * AHADEX Tools — Extra Utility Classes
+ * AHADEX Tools — Extra Utilities (Love Edition 💕)
  * ============================================================ */
 
 /* ===== Visually hidden but accessible ===== */
@@ -59,14 +59,22 @@
   aspect-ratio: 16 / 9;
 }
 
+.aspect-heart {
+  aspect-ratio: 1 / 1;
+}
+
 /* ===== Backdrop blur fallback ===== */
 @supports not (backdrop-filter: blur(20px)) {
   .backdrop-fallback {
-    background-color: rgba(10, 11, 30, 0.92);
+    background-color: rgba(26, 15, 26, 0.92);
+  }
+
+  html.light .backdrop-fallback {
+    background-color: rgba(255, 249, 251, 0.92);
   }
 }
 
-/* ===== Safe area padding for mobile (notch) ===== */
+/* ===== Safe area padding for mobile ===== */
 .safe-top {
   padding-top: env(safe-area-inset-top);
 }
@@ -78,4 +86,72 @@
 .safe-x {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+}
+
+/* ===== Heart shape (rounded top, pointed bottom) ===== */
+.heart-shape {
+  mask-image: radial-gradient(circle at 50% 45%, black 60%, transparent 61%);
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, black 60%, transparent 61%);
+}
+
+/* ===== Rose gold border ===== */
+.border-rose-gold {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#1A0F1A, #1A0F1A) padding-box,
+    linear-gradient(135deg, #FF6B9D, #D946A6, #C8A2FF, #FFD9A0) border-box;
+}
+
+html.light .border-rose-gold {
+  background:
+    linear-gradient(#FFF5F7, #FFF5F7) padding-box,
+    linear-gradient(135deg, #FF6B9D, #D946A6, #C8A2FF, #FFD9A0) border-box;
+}
+
+/* ===== Love gradient border ===== */
+.border-love-gradient {
+  position: relative;
+}
+
+.border-love-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    #FF6B9D 0%,
+    #D946A6 35%,
+    #C8A2FF 70%,
+    #FFD9A0 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===== Petal decoration utility ===== */
+.petal-decor::before,
+.petal-decor::after {
+  content: "🌸";
+  position: absolute;
+  font-size: 1rem;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.petal-decor::before {
+  top: 8px;
+  right: 12px;
+  transform: rotate(15deg);
+}
+
+.petal-decor::after {
+  bottom: 8px;
+  left: 12px;
+  transform: rotate(-15deg);
 }

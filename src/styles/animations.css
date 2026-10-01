@@ -1,9 +1,8 @@
 /* ============================================================
- * AHADEX Tools — Animation Utilities
- * Extra keyframes beyond Tailwind config
+ * AHADEX Tools — Animations (Love Edition 💕)
  * ============================================================ */
 
-/* ===== Shimmer ===== */
+/* ===== Shimmer (soft rose) ===== */
 @keyframes shimmer-slide {
   0% {
     background-position: -1000px 0;
@@ -16,9 +15,9 @@
 .shimmer {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 107, 157, 0) 0%,
+    rgba(255, 179, 198, 0.15) 50%,
+    rgba(255, 107, 157, 0) 100%
   );
   background-size: 1000px 100%;
   animation: shimmer-slide 2s linear infinite;
@@ -72,7 +71,7 @@
   animation: fade-in-down 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* ===== Stagger utilities (for children) ===== */
+/* ===== Stagger utilities ===== */
 .stagger-children > * {
   animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -85,6 +84,8 @@
 .stagger-children > *:nth-child(6) { animation-delay: 0.30s; }
 .stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
 .stagger-children > *:nth-child(8) { animation-delay: 0.40s; }
+.stagger-children > *:nth-child(9) { animation-delay: 0.45s; }
+.stagger-children > *:nth-child(10) { animation-delay: 0.50s; }
 
 /* ===== Hover lift ===== */
 .hover-lift {
@@ -94,19 +95,149 @@
   transform: translateY(-4px);
 }
 
-/* ===== Logo pulse (already in Tailwind, but provided as fallback) ===== */
-@keyframes logo-pulse-fallback {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 8px rgba(77, 217, 255, 0.4));
+/* ===== Heart pulse (rose) ===== */
+@keyframes heart-pulse-rose {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(255, 107, 157, 0.5));
+    transform: scale(1);
   }
-  50% {
-    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.7));
+  15% {
+    transform: scale(1.12);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.06);
+  }
+  60% {
+    transform: scale(1);
   }
 }
 
-.animate-logo-pulse-fallback {
-  animation: logo-pulse-fallback 3s ease-in-out infinite;
+.animate-heart-pulse {
+  animation: heart-pulse-rose 1.4s ease-in-out infinite;
+}
+
+/* ===== Rose bloom ===== */
+@keyframes rose-bloom {
+  0% {
+    transform: scale(0.7) rotate(-15deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08) rotate(4deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-rose-bloom {
+  animation: rose-bloom 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ===== Sparkle ===== */
+@keyframes sparkle-fade {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle-fade 2.5s ease-in-out infinite;
+}
+
+/* ===== Float hearts background ===== */
+@keyframes float-heart-bg {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(30px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-heart {
+  animation: float-heart-bg 15s linear infinite;
+}
+
+/* ===== Soft breathe ===== */
+@keyframes soft-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.95;
+  }
+}
+
+.animate-soft-breathe {
+  animation: soft-breathe 4s ease-in-out infinite;
+}
+
+/* ===== Ribbon slide ===== */
+@keyframes ribbon-slide {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.ribbon-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  animation: ribbon-slide 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ===== Rose glow pulse (for cards) ===== */
+@keyframes rose-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(255, 107, 157, 0.3),
+      0 0 40px rgba(217, 70, 166, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(255, 107, 157, 0.5),
+      0 0 60px rgba(217, 70, 166, 0.25);
+  }
+}
+
+.animate-rose-glow {
+  animation: rose-glow-pulse 3s ease-in-out infinite;
 }
 
 /* ===== Reduced motion override ===== */
@@ -116,7 +247,13 @@
   .animate-fade-in-up,
   .animate-fade-in-down,
   .stagger-children > *,
-  .animate-logo-pulse-fallback {
+  .animate-heart-pulse,
+  .animate-rose-bloom,
+  .animate-sparkle,
+  .animate-float-heart,
+  .animate-soft-breathe,
+  .ribbon-slide::after,
+  .animate-rose-glow {
     animation: none !important;
   }
 }

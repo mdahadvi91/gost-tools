@@ -35,9 +35,9 @@ export function AnimatedBackButton({
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
       className={cn(
         "inline-flex items-center gap-2 px-3 py-2 rounded-lg",
-        "text-sm font-medium text-dark-textSecondary",
-        "hover:text-white hover:bg-white/5",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aha-cyan",
+        "text-sm font-medium text-love-blush/70",
+        "hover:text-love-pearl hover:bg-love-rose/10",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-love-rose",
         "transition-colors duration-200",
         className
       )}

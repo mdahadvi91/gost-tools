@@ -73,10 +73,10 @@ export function ThemeToggle({ className }: { className?: string }) {
       className={cn(
         "relative inline-flex items-center justify-center",
         "w-10 h-10 rounded-xl",
-        "bg-white/5 hover:bg-white/10",
-        "border border-white/10 hover:border-white/20",
-        "text-white/80 hover:text-white",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aha-cyan",
+        "bg-love-rose/8 hover:bg-love-rose/15",
+        "border border-love-rose/20 hover:border-love-rose/35",
+        "text-love-blush hover:text-love-pearl",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-love-rose",
         "transition-all duration-300",
         className
       )}

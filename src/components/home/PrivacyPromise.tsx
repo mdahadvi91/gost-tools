@@ -30,29 +30,33 @@ export function PrivacyPromise({ className }: { className?: string }) {
         className={cn(
           "relative overflow-hidden rounded-3xl",
           "p-8 sm:p-12",
-          "bg-gradient-to-br from-dark-surface via-dark-elevated to-dark-surface",
-          "border border-white/10"
+          "bg-gradient-to-br from-dark-surface via-love-rose/[0.03] to-dark-elevated",
+          "border border-love-rose/20"
         )}
       >
         {/* Decorative glow */}
         <div
           aria-hidden="true"
-          className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-aha-mint/10 blur-[80px]"
+          className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-love-mint/10 blur-[80px]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-love-rose/10 blur-[80px]"
         />
 
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left: heading */}
           <div>
-            <div className="w-14 h-14 rounded-2xl bg-aha-mint/10 border border-aha-mint/30 flex items-center justify-center mb-5">
+            <div className="w-14 h-14 rounded-2xl bg-love-mint/10 border border-love-mint/30 flex items-center justify-center mb-5">
               <ShieldCheck
-                className="w-7 h-7 text-aha-mint"
+                className="w-7 h-7 text-love-mint"
                 aria-hidden="true"
               />
             </div>
 
             <h2
               id="privacy-heading"
-              className="font-display text-h2 font-bold text-white tracking-tight"
+              className="font-display text-h2 font-bold text-love-pearl tracking-tight"
             >
               Your privacy comes first
             </h2>
@@ -65,7 +69,7 @@ export function PrivacyPromise({ className }: { className?: string }) {
 
             <a
               href="/privacy"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-aha-mint hover:text-aha-cyan transition-colors"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-love-rose hover:text-love-mint transition-colors"
             >
               Read our privacy policy
               <span aria-hidden="true">→</span>
@@ -79,16 +83,13 @@ export function PrivacyPromise({ className }: { className?: string }) {
                 key={text}
                 className={cn(
                   "flex items-start gap-3 p-4 rounded-2xl",
-                  "bg-white/5 border border-white/10"
+                  "bg-love-rose/5 border border-love-rose/15"
                 )}
               >
-                <div className="shrink-0 w-8 h-8 rounded-lg bg-aha-mint/10 flex items-center justify-center">
-                  <Icon
-                    className="w-4 h-4 text-aha-mint"
-                    aria-hidden="true"
-                  />
+                <div className="shrink-0 w-8 h-8 rounded-lg bg-love-mint/15 flex items-center justify-center">
+                  <Icon className="w-4 h-4 text-love-mint" aria-hidden="true" />
                 </div>
-                <span className="text-sm text-white/90 leading-relaxed pt-1">
+                <span className="text-sm text-love-pearl/90 leading-relaxed pt-1">
                   {text}
                 </span>
               </li>

@@ -13,22 +13,19 @@ const STEPS: Step[] = [
     number: "01",
     Icon: Search,
     title: "Find your tool",
-    description:
-      "Search or browse by category to find exactly what you need.",
+    description: "Search or browse by category to find exactly what you need.",
   },
   {
     number: "02",
     Icon: MousePointerClick,
     title: "Use it instantly",
-    description:
-      "Upload or type. Everything processes right in your browser.",
+    description: "Upload or type. Everything processes right in your browser.",
   },
   {
     number: "03",
     Icon: Download,
     title: "Download the result",
-    description:
-      "One click to save. Your file never touched a server.",
+    description: "One click to save. Your file never touched a server.",
   },
 ];
 
@@ -41,7 +38,7 @@ export function HowItWorks({ className }: { className?: string }) {
       <div className="text-center mb-12">
         <h2
           id="how-heading"
-          className="font-display text-h2 font-bold text-white tracking-tight"
+          className="font-display text-h2 font-bold text-love-pearl tracking-tight"
         >
           How it works
         </h2>
@@ -58,27 +55,24 @@ export function HowItWorks({ className }: { className?: string }) {
               {index < STEPS.length - 1 && (
                 <div
                   aria-hidden="true"
-                  className="hidden md:block absolute top-8 left-[calc(50%+2rem)] right-[-1rem] h-px bg-gradient-to-r from-white/10 via-aha-cyan/30 to-transparent"
+                  className="hidden md:block absolute top-8 left-[calc(50%+2rem)] right-[-1rem] h-px bg-gradient-to-r from-love-rose/30 via-love-lavender/40 to-transparent"
                 />
               )}
 
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-5">
-                  <div className="w-16 h-16 rounded-2xl bg-logo-gradient flex items-center justify-center shadow-glow-violet">
-                    <Icon
-                      className="w-7 h-7 text-white"
-                      aria-hidden="true"
-                    />
+                  <div className="w-16 h-16 rounded-2xl bg-love-gradient flex items-center justify-center shadow-glow-rose">
+                    <Icon className="w-7 h-7 text-love-pearl" aria-hidden="true" />
                   </div>
                   <span
-                    className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-dark-elevated border border-white/10 flex items-center justify-center text-[10px] font-mono font-bold text-aha-cyan"
+                    className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-dark-elevated border border-love-rose/30 flex items-center justify-center text-[10px] font-mono font-bold text-love-rose"
                     aria-hidden="true"
                   >
                     {step.number}
                   </span>
                 </div>
 
-                <h3 className="font-display font-semibold text-lg text-white mb-2">
+                <h3 className="font-display font-semibold text-lg text-love-pearl mb-2">
                   {step.title}
                 </h3>
                 <p className="text-sm text-dark-textSecondary leading-relaxed max-w-xs">

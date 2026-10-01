@@ -68,10 +68,10 @@ export function LanguageToggle({ className }: { className?: string }) {
         className={cn(
           "inline-flex items-center justify-center gap-2",
           "h-10 px-3 rounded-xl",
-          "bg-white/5 hover:bg-white/10",
-          "border border-white/10 hover:border-white/20",
-          "text-white/80 hover:text-white text-sm font-medium",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aha-cyan",
+          "bg-love-rose/8 hover:bg-love-rose/15",
+          "border border-love-rose/20 hover:border-love-rose/35",
+          "text-love-blush hover:text-love-pearl text-sm font-medium",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-love-rose",
           "transition-all duration-300"
         )}
       >
@@ -90,7 +90,7 @@ export function LanguageToggle({ className }: { className?: string }) {
             className={cn(
               "absolute right-0 mt-2 min-w-[180px] py-2 z-50",
               "bg-dark-surface/95 backdrop-blur-xl",
-              "border border-white/10 rounded-xl shadow-glass-dark",
+              "border border-love-rose/20 rounded-xl shadow-glass-dark",
               "overflow-hidden"
             )}
           >
@@ -105,8 +105,8 @@ export function LanguageToggle({ className }: { className?: string }) {
                     "w-full flex items-center gap-3 px-4 py-2.5",
                     "text-left text-sm transition-colors",
                     lang === l.code
-                      ? "bg-white/10 text-white"
-                      : "text-dark-textSecondary hover:bg-white/5 hover:text-white"
+                      ? "bg-love-rose/15 text-love-pearl"
+                      : "text-dark-textSecondary hover:bg-love-rose/8 hover:text-love-pearl"
                   )}
                 >
                   <span className="text-lg" aria-hidden="true">
@@ -114,7 +114,7 @@ export function LanguageToggle({ className }: { className?: string }) {
                   </span>
                   <span className="flex-1">{l.native}</span>
                   {lang === l.code && (
-                    <Check className="w-4 h-4 text-aha-cyan" aria-hidden="true" />
+                    <Check className="w-4 h-4 text-love-rose" aria-hidden="true" />
                   )}
                 </button>
               </li>

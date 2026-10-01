@@ -22,10 +22,10 @@ const FRAGMENT_SHADER = `
   uniform float u_intensity;
 
   vec3 palette(float t) {
-    vec3 c1 = vec3(0.302, 0.851, 1.0);   // cyan
-    vec3 c2 = vec3(0.357, 0.608, 1.0);   // blue
-    vec3 c3 = vec3(0.545, 0.361, 0.965); // violet
-    vec3 c4 = vec3(0.753, 0.518, 0.988); // magenta
+    vec3 c1 = vec3(1.0, 0.420, 0.616);    // rose #FF6B9D
+    vec3 c2 = vec3(0.851, 0.275, 0.651);  // deep #D946A6
+    vec3 c3 = vec3(0.784, 0.635, 1.0);    // lavender #C8A2FF
+    vec3 c4 = vec3(1.0, 0.851, 0.627);    // gold #FFD9A0
     return c1 + (c2 - c1) * smoothstep(0.0, 0.33, t)
             + (c3 - c2) * smoothstep(0.33, 0.66, t)
             + (c4 - c3) * smoothstep(0.66, 1.0, t);
@@ -47,26 +47,29 @@ const FRAGMENT_SHADER = `
     vec2 uv = gl_FragCoord.xy / u_resolution;
     vec2 p = (gl_FragCoord.xy - 0.5 * u_resolution) / min(u_resolution.x, u_resolution.y);
 
-    float t = u_time * 0.08;
+    float t = u_time * 0.06;
 
-    // Mouse influence
+    // Mouse influence — soft pull
     vec2 mouse = (u_mouse - 0.5 * u_resolution) / min(u_resolution.x, u_resolution.y);
     float mouseDist = length(p - mouse);
-    float mouseGlow = smoothstep(0.6, 0.0, mouseDist) * 0.4;
+    float mouseGlow = smoothstep(0.7, 0.0, mouseDist) * 0.45;
 
-    // Layered waves
-    float n1 = noise(p * 1.5 + vec2(t * 0.6, t * 0.4));
-    float n2 = noise(p * 2.2 - vec2(t * 0.4, t * 0.7));
-    float n3 = noise(p * 0.9 + vec2(t * 0.3, -t * 0.5));
+    // Layered gentle waves (like drifting petals)
+    float n1 = noise(p * 1.3 + vec2(t * 0.5, t * 0.35));
+    float n2 = noise(p * 2.0 - vec2(t * 0.35, t * 0.55));
+    float n3 = noise(p * 0.8 + vec2(t * 0.25, -t * 0.4));
 
-    float combined = (n1 * 0.5 + n2 * 0.3 + n3 * 0.2);
-    float gradientT = combined * 0.6 + mouseGlow * 0.5;
+    float combined = (n1 * 0.45 + n2 * 0.3 + n3 * 0.25);
+    float gradientT = combined * 0.55 + mouseGlow * 0.5;
 
     vec3 color = palette(gradientT);
 
-    // Radial vignette
-    float vignette = 1.0 - smoothstep(0.6, 1.4, length(uv - 0.5));
-    color *= (0.3 + vignette * 0.4) * u_intensity;
+    // Soft radial vignette
+    float vignette = 1.0 - smoothstep(0.55, 1.5, length(uv - 0.5));
+    color *= (0.35 + vignette * 0.4) * u_intensity;
+
+    // Add subtle pinkish tint
+    color += vec3(0.05, 0.0, 0.03);
 
     gl_FragColor = vec4(color, 1.0);
   }
@@ -107,7 +110,6 @@ export function ShaderBackground({
     });
     if (!gl) return;
 
-    // Build program
     const vs = compileShader(gl, gl.VERTEX_SHADER, VERTEX_SHADER);
     const fs = compileShader(gl, gl.FRAGMENT_SHADER, FRAGMENT_SHADER);
     if (!vs || !fs) return;
@@ -120,7 +122,6 @@ export function ShaderBackground({
     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
     gl.useProgram(program);
 
-    // Full-screen triangle
     const buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
     gl.bufferData(

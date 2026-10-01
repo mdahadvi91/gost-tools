@@ -64,8 +64,8 @@ export function Tooltip({
             className={cn(
               "absolute z-[9999] pointer-events-none",
               "px-2.5 py-1.5 rounded-lg",
-              "bg-dark-elevated border border-white/10",
-              "text-xs text-white font-medium whitespace-nowrap",
+              "bg-dark-elevated border border-love-rose/25",
+              "text-xs text-love-pearl font-medium whitespace-nowrap",
               "shadow-glass-dark",
               sideStyles[side]
             )}

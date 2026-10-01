@@ -18,13 +18,13 @@ interface BadgeProps {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-  default: "bg-white/5 text-white/80 border-white/10",
-  success: "bg-aha-mint/10 text-aha-mint border-aha-mint/30",
-  warning: "bg-aha-gold/10 text-aha-gold border-aha-gold/30",
-  error: "bg-aha-coral/10 text-aha-coral border-aha-coral/30",
-  info: "bg-aha-cyan/10 text-aha-cyan border-aha-cyan/30",
-  popular: "bg-logo-gradient text-white border-transparent",
-  new: "bg-aha-violet/20 text-aha-magenta border-aha-violet/40",
+  default: "bg-love-rose/10 text-love-blush border-love-rose/25",
+  success: "bg-love-mint/15 text-love-mint border-love-mint/35",
+  warning: "bg-love-gold/15 text-love-gold border-love-gold/35",
+  error: "bg-love-rose/15 text-love-rose border-love-rose/40",
+  info: "bg-love-lavender/15 text-love-lavender border-love-lavender/35",
+  popular: "bg-love-gradient text-white border-transparent shadow-glow-rose",
+  new: "bg-love-deep/25 text-love-blush border-love-deep/45",
 };
 
 const sizeStyles = {

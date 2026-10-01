@@ -19,13 +19,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-logo-gradient text-white shadow-glow-violet hover:shadow-glow-magenta active:scale-[0.98]",
+    "bg-love-gradient text-white shadow-glow-rose hover:shadow-glow-deep active:scale-[0.98]",
   secondary:
-    "bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-white/20",
+    "bg-love-rose/8 text-love-pearl border border-love-rose/25 hover:bg-love-rose/15 hover:border-love-rose/40",
   ghost:
-    "bg-transparent text-white/80 hover:text-white hover:bg-white/5",
+    "bg-transparent text-love-blush hover:text-love-pearl hover:bg-love-rose/10",
   danger:
-    "bg-aha-coral text-white hover:bg-aha-coral/90 shadow-glow-coral",
+    "bg-love-wine text-love-pearl hover:bg-love-wine/90 shadow-glow-wine",
 };
 
 const sizeStyles: Record<Size, string> = {
@@ -56,7 +56,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const classes = cn(
       "inline-flex items-center justify-center font-medium",
       "transition-all duration-300 ease-smooth",
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aha-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg",
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-love-rose focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg",
       "disabled:opacity-50 disabled:pointer-events-none",
       variantStyles[variant],
       sizeStyles[size],

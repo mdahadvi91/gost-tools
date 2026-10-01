@@ -22,17 +22,17 @@ export function PopularTools({ className }: PopularToolsProps) {
         <div>
           <h2
             id="popular-heading"
-            className="font-display text-h2 font-bold text-white tracking-tight"
+            className="font-display text-h2 font-bold text-love-pearl tracking-tight"
           >
-            Most popular
+            Most loved
           </h2>
           <p className="mt-1.5 text-sm text-dark-textSecondary">
-            What people use the most
+            What people use the most 💕
           </p>
         </div>
         <Link
           to="/tools"
-          className="shrink-0 inline-flex items-center gap-1.5 text-sm font-medium text-aha-cyan hover:text-aha-magenta transition-colors"
+          className="shrink-0 inline-flex items-center gap-1.5 text-sm font-medium text-love-rose hover:text-love-deep transition-colors"
         >
           View all
           <ArrowRight className="w-4 h-4" aria-hidden="true" />

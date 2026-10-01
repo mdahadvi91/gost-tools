@@ -45,7 +45,7 @@ export function ToolsGrid({ className }: ToolsGridProps) {
           <div>
             <h2
               id="all-tools-heading"
-              className="font-display text-h2 font-bold text-white tracking-tight"
+              className="font-display text-h2 font-bold text-love-pearl tracking-tight"
             >
               All tools
             </h2>
@@ -57,7 +57,7 @@ export function ToolsGrid({ className }: ToolsGridProps) {
           {/* Search input */}
           <div className="relative sm:w-72">
             <Search
-              className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-textSecondary"
+              className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-love-blush/60"
               aria-hidden="true"
             />
             <input
@@ -68,9 +68,9 @@ export function ToolsGrid({ className }: ToolsGridProps) {
               aria-label="Filter tools"
               className={cn(
                 "w-full h-11 pl-10 pr-4 rounded-xl",
-                "bg-white/5 border border-white/10",
-                "text-sm text-white placeholder:text-dark-textSecondary/60",
-                "focus:outline-none focus:border-aha-cyan/50 focus:shadow-glow-cyan",
+                "bg-love-rose/5 border border-love-rose/15",
+                "text-sm text-love-pearl placeholder:text-love-blush/40",
+                "focus:outline-none focus:border-love-rose/50 focus:shadow-glow-rose",
                 "transition-all duration-200"
               )}
             />

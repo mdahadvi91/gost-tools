@@ -15,14 +15,14 @@ export function EmptySearchState({
       role="status"
       className="flex flex-col items-center justify-center text-center py-16 px-4"
     >
-      <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+      <div className="w-20 h-20 rounded-2xl bg-love-rose/8 border border-love-rose/20 flex items-center justify-center mb-6">
         <SearchX
-          className="w-10 h-10 text-dark-textSecondary"
+          className="w-10 h-10 text-love-blush/60"
           aria-hidden="true"
         />
       </div>
 
-      <h3 className="font-display text-xl font-semibold text-white mb-2">
+      <h3 className="font-display text-xl font-semibold text-love-pearl mb-2">
         No tools found
       </h3>
 

@@ -2151,7 +2151,7 @@ export const tools: Tool[] = [
       "Extract specific pages from a PDF online for free. Flexible range selection, no uploads, runs entirely in your browser.",
     ogImage: "/images/og/tools/pdf-page-extractor-og.jpg",
   },
-
+},
 // ============================================================
 // 📱 QR & BARCODE TOOLS (8)
 // ============================================================
@@ -3017,7 +3017,6 @@ export const tools: Tool[] = [
       "Create a branded QR code with your logo in the center. Scan-safe, high-resolution, free. Runs entirely in your browser.",
     ogImage: "/images/og/tools/qr-code-with-logo-og.jpg",
   },
-},
 },
 
   // ============================================================

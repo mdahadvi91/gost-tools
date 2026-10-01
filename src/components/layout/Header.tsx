@@ -35,19 +35,25 @@ export function Header({
         "fixed top-0 left-0 right-0 z-50",
         "transition-all duration-300 ease-smooth",
         scrolled
-          ? "bg-dark-bg/80 backdrop-blur-xl border-b border-white/5 shadow-glass-dark"
+          ? "bg-dark-bg/80 backdrop-blur-xl border-b border-love-rose/15 shadow-glass-dark"
           : "bg-transparent",
         className
       )}
     >
+      {/* Rose gold accent line */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 right-0 h-[1px] bg-love-gradient opacity-40"
+      />
+
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 h-16 lg:h-[72px]">
-          {/* Mobile: Left menu button */}
+          {/* Mobile: Left menu */}
           <button
             type="button"
             onClick={onMenuClick}
             aria-label="Open menu"
-            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aha-cyan"
+            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-love-rose/10 border border-love-rose/20 text-love-blush hover:text-white hover:bg-love-rose/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-love-rose"
           >
             <Menu className="w-5 h-5" aria-hidden="true" />
           </button>
@@ -56,26 +62,26 @@ export function Header({
           <HeartbeatHeart
             size="sm"
             intensity="calm"
-            color="coral"
+            color="rose"
             className="hidden lg:inline-flex"
           />
 
           {/* Logo */}
           <Logo size="md" showText />
 
-          {/* Center: Search (desktop) */}
+          {/* Center: Search */}
           <div className="hidden lg:flex flex-1 max-w-xl mx-auto">
             <SearchBar />
           </div>
 
           {/* Right controls */}
           <div className="flex items-center gap-2 ml-auto lg:ml-0">
-            {/* Mobile: Search toggle */}
+            {/* Mobile search toggle */}
             <button
               type="button"
               onClick={() => setMobileSearchOpen((o) => !o)}
               aria-label="Toggle search"
-              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-love-rose/10 border border-love-rose/20 text-love-blush hover:text-white hover:bg-love-rose/20 transition-colors"
             >
               {mobileSearchOpen ? (
                 <X className="w-5 h-5" aria-hidden="true" />
@@ -102,16 +108,16 @@ export function Header({
             <HeartbeatHeart
               size="sm"
               intensity="calm"
-              color="violet"
+              color="lavender"
               className="hidden lg:inline-flex"
             />
 
-            {/* Mobile: Right panel button */}
+            {/* Mobile right panel */}
             <button
               type="button"
               onClick={onRightPanelClick}
               aria-label="Open utility panel"
-              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-love-rose/10 border border-love-rose/20 text-love-blush hover:text-white hover:bg-love-rose/20 transition-colors"
             >
               <svg
                 className="w-5 h-5"
@@ -136,7 +142,7 @@ export function Header({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden overflow-hidden border-t border-white/5 bg-dark-bg/95 backdrop-blur-xl"
+            className="lg:hidden overflow-hidden border-t border-love-rose/10 bg-dark-bg/95 backdrop-blur-xl"
           >
             <div className="px-4 py-3">
               <SearchBar autoFocus onClose={() => setMobileSearchOpen(false)} />

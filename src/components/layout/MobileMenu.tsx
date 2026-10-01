@@ -54,7 +54,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-[70] bg-black/60 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-[70] bg-love-black/70 backdrop-blur-md lg:hidden"
             aria-hidden="true"
           />
 
@@ -66,15 +66,21 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             role="dialog"
             aria-modal="true"
             aria-label="Main menu"
-            className="fixed top-0 left-0 bottom-0 z-[71] w-[85vw] max-w-sm bg-dark-bg border-r border-white/10 overflow-y-auto lg:hidden"
+            className="fixed top-0 left-0 bottom-0 z-[71] w-[85vw] max-w-sm bg-dark-bg border-r border-love-rose/20 overflow-y-auto lg:hidden"
           >
-            <div className="flex items-center justify-between p-4 border-b border-white/10">
+            {/* Rose gold top line */}
+            <div
+              aria-hidden="true"
+              className="absolute top-0 left-0 right-0 h-[2px] bg-love-gradient"
+            />
+
+            <div className="flex items-center justify-between p-4 border-b border-love-rose/15">
               <Logo size="sm" showText animated={false} linkTo={null} />
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close menu"
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-love-blush/70 hover:text-love-pearl hover:bg-love-rose/10 transition-colors"
               >
                 <X className="w-5 h-5" aria-hidden="true" />
               </button>
@@ -97,8 +103,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                         "flex items-center gap-3 px-3 py-3 rounded-xl",
                         "text-sm font-medium transition-all",
                         isActive
-                          ? "bg-white/10 text-white"
-                          : "text-dark-textSecondary hover:text-white hover:bg-white/5"
+                          ? "bg-love-rose/15 text-love-pearl shadow-glow-rose"
+                          : "text-dark-textSecondary hover:text-love-pearl hover:bg-love-rose/8"
                       )}
                     >
                       <Icon className="w-5 h-5" aria-hidden="true" />
@@ -110,7 +116,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
               {/* Categories */}
               <div>
-                <p className="px-3 mb-2 text-[11px] uppercase tracking-widest text-dark-textSecondary/70 font-semibold">
+                <p className="px-3 mb-2 text-[11px] uppercase tracking-widest text-love-blush/60 font-semibold">
                   Categories
                 </p>
                 <div className="space-y-1">
@@ -126,8 +132,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                           "flex items-center gap-3 px-3 py-2.5 rounded-xl",
                           "text-sm font-medium transition-all",
                           isActive
-                            ? "bg-white/10 text-white"
-                            : "text-dark-textSecondary hover:text-white hover:bg-white/5"
+                            ? "bg-love-rose/15 text-love-pearl"
+                            : "text-dark-textSecondary hover:text-love-pearl hover:bg-love-rose/8"
                         )}
                       >
                         <img
@@ -139,7 +145,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                           aria-hidden="true"
                         />
                         <span className="flex-1 truncate">{cat.name}</span>
-                        <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-md bg-white/5 text-dark-textSecondary">
+                        <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-md bg-love-rose/10 text-love-blush/60">
                           {cat.count}
                         </span>
                       </Link>
@@ -149,19 +155,19 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               </div>
 
               {/* GitHub */}
-              <div className="pt-4 border-t border-white/10">
+              <div className="pt-4 border-t border-love-rose/15">
                 <a
                   href="https://github.com/mdahadvi91/gost-tools"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-3 py-3 rounded-xl bg-white/5 border border-white/10 text-dark-textSecondary hover:text-white hover:border-white/20 transition-all"
+                  className="flex items-center gap-3 px-3 py-3 rounded-xl bg-love-rose/8 border border-love-rose/20 text-love-blush/70 hover:text-love-pearl hover:border-love-rose/40 transition-all"
                 >
                   <Github className="w-4 h-4" aria-hidden="true" />
                   <span className="text-sm">View on GitHub</span>
                 </a>
               </div>
 
-              <p className="text-xs text-center text-dark-textSecondary/60 pt-2">
+              <p className="text-xs text-center text-love-blush/40 pt-2">
                 AHADEX Tools v1.0
               </p>
             </nav>

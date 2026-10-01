@@ -44,15 +44,15 @@ export function ToolCard({ tool, className }: ToolCardProps) {
         to={tool.path}
         className={cn(
           "group relative flex flex-col gap-3 p-5",
-          "rounded-2xl bg-dark-surface border border-white/10",
-          "hover:border-aha-cyan/40 hover:shadow-glow-cyan",
+          "rounded-2xl bg-dark-surface border border-love-rose/15",
+          "hover:border-love-rose/50 hover:shadow-glow-rose",
           "transition-all duration-300",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aha-cyan"
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-love-rose"
         )}
       >
         {/* Top row: icon + badges */}
         <div className="flex items-start justify-between gap-3">
-          <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+          <div className="w-11 h-11 rounded-xl bg-love-rose/8 border border-love-rose/20 flex items-center justify-center group-hover:bg-love-rose/15 transition-colors">
             <img
               src={icon}
               alt=""
@@ -79,7 +79,7 @@ export function ToolCard({ tool, className }: ToolCardProps) {
 
         {/* Name + description */}
         <div className="flex-1 min-w-0">
-          <h3 className="font-display font-semibold text-base text-white group-hover:text-aha-cyan transition-colors truncate">
+          <h3 className="font-display font-semibold text-base text-love-pearl group-hover:text-love-rose transition-colors truncate">
             {tool.name}
           </h3>
           <p className="mt-1 text-sm text-dark-textSecondary line-clamp-2 leading-relaxed">
@@ -88,12 +88,12 @@ export function ToolCard({ tool, className }: ToolCardProps) {
         </div>
 
         {/* Bottom row: arrow */}
-        <div className="flex items-center justify-between pt-2 border-t border-white/5">
-          <span className="text-[11px] uppercase tracking-widest text-dark-textSecondary/70 font-medium">
+        <div className="flex items-center justify-between pt-2 border-t border-love-rose/10">
+          <span className="text-[11px] uppercase tracking-widest text-love-blush/50 font-medium">
             {tool.category}
           </span>
           <ArrowRight
-            className="w-4 h-4 text-dark-textSecondary group-hover:text-aha-cyan group-hover:translate-x-0.5 transition-all"
+            className="w-4 h-4 text-love-blush/60 group-hover:text-love-rose group-hover:translate-x-0.5 transition-all"
             aria-hidden="true"
           />
         </div>

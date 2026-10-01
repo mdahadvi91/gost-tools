@@ -91,7 +91,7 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-[60] bg-love-black/70 backdrop-blur-md lg:hidden"
             aria-hidden="true"
           />
 
@@ -103,17 +103,23 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
             role="dialog"
             aria-modal="true"
             aria-label="Utility panel"
-            className="fixed top-0 right-0 bottom-0 z-[61] w-[85vw] max-w-sm bg-dark-bg border-l border-white/10 overflow-y-auto lg:hidden"
+            className="fixed top-0 right-0 bottom-0 z-[61] w-[85vw] max-w-sm bg-dark-bg border-l border-love-rose/20 overflow-y-auto lg:hidden"
           >
-            <div className="flex items-center justify-between p-4 border-b border-white/10">
-              <h2 className="font-display font-semibold text-lg text-white">
+            {/* Rose gold top line */}
+            <div
+              aria-hidden="true"
+              className="absolute top-0 left-0 right-0 h-[2px] bg-love-gradient"
+            />
+
+            <div className="flex items-center justify-between p-4 border-b border-love-rose/15">
+              <h2 className="font-display font-semibold text-lg text-love-pearl">
                 Settings
               </h2>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close panel"
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-love-blush/70 hover:text-love-pearl hover:bg-love-rose/10 transition-colors"
               >
                 <X className="w-5 h-5" aria-hidden="true" />
               </button>
@@ -122,7 +128,7 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
             <div className="p-4 space-y-6">
               {/* Theme */}
               <section>
-                <p className="text-xs uppercase tracking-widest text-dark-textSecondary font-semibold mb-3">
+                <p className="text-xs uppercase tracking-widest text-love-blush/60 font-semibold mb-3">
                   Theme
                 </p>
                 <div className="grid grid-cols-3 gap-2">
@@ -135,8 +141,8 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
                         "flex flex-col items-center gap-1.5 py-3 rounded-xl",
                         "border transition-all duration-200",
                         currentTheme === value
-                          ? "bg-white/10 border-aha-cyan/50 text-white"
-                          : "bg-white/5 border-white/10 text-dark-textSecondary hover:border-white/20"
+                          ? "bg-love-rose/15 border-love-rose/50 text-love-pearl shadow-glow-rose"
+                          : "bg-love-rose/5 border-love-rose/15 text-love-blush/70 hover:border-love-rose/30"
                       )}
                       aria-pressed={currentTheme === value}
                     >
@@ -149,7 +155,7 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
 
               {/* Language */}
               <section>
-                <p className="text-xs uppercase tracking-widest text-dark-textSecondary font-semibold mb-3">
+                <p className="text-xs uppercase tracking-widest text-love-blush/60 font-semibold mb-3">
                   Language
                 </p>
                 <div className="space-y-2">
@@ -162,8 +168,8 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
                         "w-full flex items-center gap-3 px-4 py-3 rounded-xl",
                         "border transition-all duration-200",
                         currentLang === code
-                          ? "bg-white/10 border-aha-cyan/50 text-white"
-                          : "bg-white/5 border-white/10 text-dark-textSecondary hover:border-white/20"
+                          ? "bg-love-rose/15 border-love-rose/50 text-love-pearl"
+                          : "bg-love-rose/5 border-love-rose/15 text-love-blush/70 hover:border-love-rose/30"
                       )}
                       aria-pressed={currentLang === code}
                     >
@@ -174,7 +180,7 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
                         {native}
                       </span>
                       {currentLang === code && (
-                        <span className="w-2 h-2 rounded-full bg-aha-cyan" />
+                        <span className="w-2 h-2 rounded-full bg-love-rose shadow-glow-rose" />
                       )}
                     </button>
                   ))}
@@ -183,7 +189,7 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
 
               {/* Sound */}
               <section>
-                <p className="text-xs uppercase tracking-widest text-dark-textSecondary font-semibold mb-3">
+                <p className="text-xs uppercase tracking-widest text-love-blush/60 font-semibold mb-3">
                   Sound
                 </p>
                 <button
@@ -192,30 +198,30 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
                   className={cn(
                     "w-full flex items-center gap-3 px-4 py-3 rounded-xl",
                     "border transition-all duration-200",
-                    "bg-white/5 border-white/10 text-dark-textSecondary hover:border-white/20"
+                    "bg-love-rose/5 border-love-rose/15 hover:border-love-rose/30"
                   )}
                   aria-pressed={soundEnabled}
                 >
                   {soundEnabled ? (
                     <Volume2
-                      className="w-5 h-5 text-aha-cyan"
+                      className="w-5 h-5 text-love-rose"
                       aria-hidden="true"
                     />
                   ) : (
                     <VolumeX className="w-5 h-5" aria-hidden="true" />
                   )}
-                  <span className="flex-1 text-sm font-medium text-left text-white">
+                  <span className="flex-1 text-sm font-medium text-left text-love-pearl">
                     Sound Effects
                   </span>
                   <span
                     className={cn(
                       "relative w-10 h-6 rounded-full transition-colors",
-                      soundEnabled ? "bg-aha-cyan" : "bg-white/20"
+                      soundEnabled ? "bg-love-rose" : "bg-love-rose/20"
                     )}
                   >
                     <span
                       className={cn(
-                        "absolute top-0.5 w-5 h-5 rounded-full bg-white transition-transform",
+                        "absolute top-0.5 w-5 h-5 rounded-full bg-love-pearl transition-transform shadow-sm",
                         soundEnabled ? "translate-x-4" : "translate-x-0.5"
                       )}
                     />
@@ -225,7 +231,7 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
 
               {/* Links */}
               <section>
-                <p className="text-xs uppercase tracking-widest text-dark-textSecondary font-semibold mb-3">
+                <p className="text-xs uppercase tracking-widest text-love-blush/60 font-semibold mb-3">
                   More
                 </p>
                 <div className="space-y-2">
@@ -233,14 +239,14 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
                     href="https://github.com/mdahadvi91/gost-tools"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-dark-textSecondary hover:text-white hover:border-white/20 transition-all"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-love-rose/5 border border-love-rose/15 text-love-blush/70 hover:text-love-pearl hover:border-love-rose/30 transition-all"
                   >
                     <Github className="w-4 h-4" aria-hidden="true" />
                     <span className="text-sm">View on GitHub</span>
                   </a>
                   <a
                     href="mailto:mdahadvi91@gmail.com"
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-dark-textSecondary hover:text-white hover:border-white/20 transition-all"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-love-rose/5 border border-love-rose/15 text-love-blush/70 hover:text-love-pearl hover:border-love-rose/30 transition-all"
                   >
                     <Mail className="w-4 h-4" aria-hidden="true" />
                     <span className="text-sm">Contact us</span>
@@ -248,7 +254,7 @@ export function RightUtilityPanel({ open, onClose }: RightUtilityPanelProps) {
                 </div>
               </section>
 
-              <p className="text-xs text-center text-dark-textSecondary/60 pt-4">
+              <p className="text-xs text-center text-love-blush/40 pt-4">
                 AHADEX Tools v1.0
               </p>
             </div>

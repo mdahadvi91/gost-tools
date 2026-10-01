@@ -42,13 +42,16 @@ export function HeroSection({ className }: HeroSectionProps) {
       )}
       aria-labelledby="hero-heading"
     >
-      {/* Decorative glow blobs */}
+      {/* Decorative glow blobs + floating hearts */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 pointer-events-none"
       >
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-aha-cyan/10 blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-aha-violet/10 blur-[100px]" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-love-rose/15 blur-[100px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-love-lavender/15 blur-[100px]" />
+        <span className="absolute top-1/4 right-[15%] text-3xl animate-float-heart opacity-30" style={{ animationDelay: "0s" }}>💕</span>
+        <span className="absolute bottom-1/4 left-[10%] text-2xl animate-float-heart opacity-25" style={{ animationDelay: "3s" }}>🌸</span>
+        <span className="absolute top-1/2 right-[8%] text-2xl animate-float-heart opacity-20" style={{ animationDelay: "6s" }}>💗</span>
       </div>
 
       <motion.div
@@ -59,27 +62,27 @@ export function HeroSection({ className }: HeroSectionProps) {
       >
         {/* Badge */}
         <motion.div variants={itemVariants} className="flex justify-center mb-6">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-sm text-white/80">
-            <Sparkles className="w-4 h-4 text-aha-cyan" aria-hidden="true" />
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-love-rose/8 border border-love-rose/20 backdrop-blur-xl text-sm text-love-blush">
+            <Sparkles className="w-4 h-4 text-love-rose" aria-hidden="true" />
             <span>42 free tools · no sign-up · 100% private</span>
           </span>
         </motion.div>
 
         {/* Heartbeat heart */}
         <motion.div variants={itemVariants} className="flex justify-center mb-4">
-          <HeartbeatHeart size="lg" intensity="normal" color="violet" />
+          <HeartbeatHeart size="xl" intensity="normal" color="rose" />
         </motion.div>
 
         {/* Main heading */}
         <motion.h1
           variants={itemVariants}
           id="hero-heading"
-          className="font-display font-bold text-hero text-white tracking-tight"
+          className="font-display font-bold text-hero text-love-pearl tracking-tight"
         >
-          <span className="bg-logo-gradient bg-clip-text text-transparent">
+          <span className="bg-love-gradient bg-clip-text text-transparent">
             AHADEX
           </span>{" "}
-          <span className="text-white/90">Tools</span>
+          <span className="text-love-pearl/90">Tools</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -87,8 +90,8 @@ export function HeroSection({ className }: HeroSectionProps) {
           variants={itemVariants}
           className="mt-5 text-lg sm:text-xl text-dark-textSecondary max-w-2xl mx-auto leading-relaxed"
         >
-          Simple, fast and private online tools. Everything runs in your
-          browser — no uploads, no accounts, no waiting.
+          Simple, fast and private online tools — crafted with care.
+          Everything runs in your browser. No uploads, no accounts.
         </motion.p>
 
         {/* Search */}
@@ -121,18 +124,18 @@ export function HeroSection({ className }: HeroSectionProps) {
         {/* Trust strip */}
         <motion.div
           variants={itemVariants}
-          className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-dark-textSecondary/80"
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-love-blush/70"
         >
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-aha-mint" />
+            <span className="w-1.5 h-1.5 rounded-full bg-love-mint" />
             Runs in your browser
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-aha-cyan" />
+            <span className="w-1.5 h-1.5 rounded-full bg-love-rose" />
             No file uploads
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-aha-violet" />
+            <span className="w-1.5 h-1.5 rounded-full bg-love-lavender" />
             Free forever
           </span>
         </motion.div>

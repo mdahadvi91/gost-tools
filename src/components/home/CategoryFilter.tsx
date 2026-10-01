@@ -26,10 +26,7 @@ export function CategoryFilter({
     <div
       role="tablist"
       aria-label="Tool categories"
-      className={cn(
-        "flex flex-wrap items-center gap-2",
-        className
-      )}
+      className={cn("flex flex-wrap items-center gap-2", className)}
     >
       {CATEGORIES.map((cat) => {
         const isActive = active === cat.slug;
@@ -45,17 +42,17 @@ export function CategoryFilter({
               "relative inline-flex items-center gap-2 px-4 py-2 rounded-xl",
               "text-sm font-medium whitespace-nowrap",
               "transition-colors duration-200",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aha-cyan",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-love-rose",
               isActive
-                ? "text-white"
-                : "text-dark-textSecondary hover:text-white hover:bg-white/5"
+                ? "text-love-pearl"
+                : "text-dark-textSecondary hover:text-love-pearl hover:bg-love-rose/8"
             )}
           >
             {isActive && (
               <motion.span
                 layoutId="category-active"
                 transition={{ type: "spring", stiffness: 500, damping: 32 }}
-                className="absolute inset-0 rounded-xl bg-logo-gradient shadow-glow-violet -z-10"
+                className="absolute inset-0 rounded-xl bg-love-gradient shadow-glow-rose -z-10"
               />
             )}
             <span>{cat.name}</span>
@@ -63,8 +60,8 @@ export function CategoryFilter({
               className={cn(
                 "text-[10px] font-mono px-1.5 py-0.5 rounded-md",
                 isActive
-                  ? "bg-white/20 text-white"
-                  : "bg-white/5 text-dark-textSecondary"
+                  ? "bg-love-pearl/25 text-love-pearl"
+                  : "bg-love-rose/8 text-love-blush/60"
               )}
             >
               {cat.count}

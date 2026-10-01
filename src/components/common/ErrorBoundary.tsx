@@ -50,20 +50,20 @@ export class ErrorBoundary extends Component<
         className={cn(
           "flex flex-col items-center justify-center text-center",
           isTool
-            ? "min-h-[400px] p-8 rounded-2xl bg-dark-surface/50 border border-aha-coral/20"
+            ? "min-h-[400px] p-8 rounded-2xl bg-dark-surface/50 border border-love-rose/25"
             : "min-h-screen p-6 bg-dark-bg"
         )}
       >
         <div
           className={cn(
             "flex items-center justify-center rounded-2xl mb-6",
-            "bg-aha-coral/10 border border-aha-coral/20",
+            "bg-love-rose/10 border border-love-rose/30",
             isTool ? "w-16 h-16" : "w-20 h-20"
           )}
         >
           <AlertTriangle
             className={cn(
-              "text-aha-coral",
+              "text-love-rose",
               isTool ? "w-8 h-8" : "w-10 h-10"
             )}
             aria-hidden="true"
@@ -72,7 +72,7 @@ export class ErrorBoundary extends Component<
 
         <h2
           className={cn(
-            "font-display font-bold text-white mb-2",
+            "font-display font-bold text-love-pearl mb-2",
             isTool ? "text-xl" : "text-3xl"
           )}
         >
@@ -89,7 +89,7 @@ export class ErrorBoundary extends Component<
           <button
             type="button"
             onClick={this.handleReset}
-            className="inline-flex items-center gap-2 px-5 h-11 rounded-xl bg-logo-gradient text-white font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 px-5 h-11 rounded-xl bg-love-gradient text-love-pearl font-medium hover:opacity-90 transition-opacity shadow-glow-rose"
           >
             <RefreshCw className="w-4 h-4" aria-hidden="true" />
             Try Again
@@ -97,7 +97,7 @@ export class ErrorBoundary extends Component<
 
           <a
             href="/"
-            className="inline-flex items-center gap-2 px-5 h-11 rounded-xl bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors"
+            className="inline-flex items-center gap-2 px-5 h-11 rounded-xl bg-love-rose/10 border border-love-rose/25 text-love-pearl font-medium hover:bg-love-rose/20 transition-colors"
           >
             <Home className="w-4 h-4" aria-hidden="true" />
             Go Home
@@ -105,7 +105,7 @@ export class ErrorBoundary extends Component<
         </div>
 
         {import.meta.env.DEV && this.state.error && (
-          <pre className="mt-8 max-w-2xl p-4 rounded-lg bg-black/50 text-left text-xs text-aha-coral overflow-auto">
+          <pre className="mt-8 max-w-2xl p-4 rounded-lg bg-love-black/60 text-left text-xs text-love-rose overflow-auto border border-love-rose/20">
             {this.state.error.message}
           </pre>
         )}

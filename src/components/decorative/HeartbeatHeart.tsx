@@ -3,12 +3,12 @@ import { cn } from "@lib/cn";
 import { useReducedMotion } from "@hooks/useReducedMotion";
 
 type Intensity = "calm" | "normal" | "excited";
-type Size = "sm" | "md" | "lg";
+type Size = "sm" | "md" | "lg" | "xl";
 
 interface HeartbeatHeartProps {
   size?: Size;
   intensity?: Intensity;
-  color?: "coral" | "violet" | "cyan" | "gold";
+  color?: "rose" | "deep" | "blush" | "lavender" | "gold";
   animated?: boolean;
   className?: string;
   ariaLabel?: string;
@@ -18,13 +18,15 @@ const sizeMap: Record<Size, number> = {
   sm: 16,
   md: 24,
   lg: 40,
+  xl: 64,
 };
 
 const colorMap = {
-  coral: { primary: "#FF5F8F", glow: "rgba(255, 95, 143, 0.45)" },
-  violet: { primary: "#8B5CF6", glow: "rgba(139, 92, 246, 0.45)" },
-  cyan: { primary: "#4DD9FF", glow: "rgba(77, 217, 255, 0.45)" },
-  gold: { primary: "#FFB84D", glow: "rgba(255, 184, 77, 0.45)" },
+  rose: { primary: "#FF6B9D", glow: "rgba(255, 107, 157, 0.5)" },
+  deep: { primary: "#D946A6", glow: "rgba(217, 70, 166, 0.5)" },
+  blush: { primary: "#FFB3C6", glow: "rgba(255, 179, 198, 0.5)" },
+  lavender: { primary: "#C8A2FF", glow: "rgba(200, 162, 255, 0.5)" },
+  gold: { primary: "#FFD9A0", glow: "rgba(255, 217, 160, 0.5)" },
 };
 
 const intensityTimings: Record<Intensity, number> = {
@@ -36,7 +38,7 @@ const intensityTimings: Record<Intensity, number> = {
 export function HeartbeatHeart({
   size = "md",
   intensity = "normal",
-  color = "coral",
+  color = "rose",
   animated = true,
   className,
   ariaLabel = "Heartbeat",
@@ -75,9 +77,15 @@ export function HeartbeatHeart({
         fill="none"
         aria-hidden="true"
       >
+        <defs>
+          <radialGradient id={`heart-grad-${color}`} cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stopColor={primary} stopOpacity="1" />
+            <stop offset="100%" stopColor={primary} stopOpacity="0.85" />
+          </radialGradient>
+        </defs>
         <path
           d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-          fill={primary}
+          fill={`url(#heart-grad-${color})`}
         />
       </svg>
     </motion.span>

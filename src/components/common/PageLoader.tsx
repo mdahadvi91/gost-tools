@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Logo } from "./Logo";
+import { HeartbeatHeart } from "@components/decorative/HeartbeatHeart";
 
 export function PageLoader() {
   return (
@@ -14,13 +14,13 @@ export function PageLoader() {
         transition={{ duration: 0.4 }}
         className="flex flex-col items-center gap-6"
       >
-        <Logo size="lg" showText={false} linkTo={null} />
+        <HeartbeatHeart size="lg" intensity="normal" color="rose" />
 
         <div className="flex gap-1.5" aria-hidden="true">
           {[0, 1, 2].map((i) => (
             <motion.span
               key={i}
-              className="w-2 h-2 rounded-full bg-aha-cyan"
+              className="w-2 h-2 rounded-full bg-love-rose"
               animate={{
                 scale: [1, 1.5, 1],
                 opacity: [0.4, 1, 0.4],
@@ -35,7 +35,9 @@ export function PageLoader() {
           ))}
         </div>
 
-        <p className="text-sm text-dark-textSecondary">Loading...</p>
+        <p className="text-sm text-love-blush/60 font-script text-lg">
+          Loading...
+        </p>
       </motion.div>
     </div>
   );
